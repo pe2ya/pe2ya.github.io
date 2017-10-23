@@ -1,0 +1,47 @@
+﻿<!DOKTYPE html>
+ <html>
+  <head>
+    <title>Алгоритм Евкліда</title>
+	 <meta name ="author" content="Петій А.Є.">
+	 <meta name ="description" content="Код програми реалізації алгоритму Евкліда">
+	 <meta name ="keywprds" content="Алгоритм,Евклід, програма реалізіції">
+  </head>
+  <body>
+    Код програми реалізації алгоритму Евкліда знаходження найбільшого спільного дільника:
+  <p>
+  <pre>
+   <code>function nod( a, b: longint): longint; 
+  begin
+   while (a <> 0) and (b <> 0) do
+     if a >= b then 
+       a:= a mod b 
+     else 
+       b:= b mod a;
+   nod:= a + b;
+  end;</code>
+  </pre>
+  <p>
+  <pre>
+    Алгоритм Евкліда для цілих чисел:
+	
+ Нехай <var>a</var> і <var>b</var> - цілі числа, не рівні одночасно нулю
+ <var>a> b> r1> r2> r3> r4> ...> rn </var>, то:
+<var>a = bq<sub>0</sub> + r<sub>1</sub>,
+b = r<sub>1</sub>q<sub>1</sub> + r<sub>2</sub>,
+r<sub>1</sub> = r<sub>2</sub>q<sub>2</sub> + r<sub>3</sub>,
+...
+r<sub>k-2</sub> = r<sub>k-1</sub>q<sub>k-1</sub> + r<sub>k</sub>,
+...
+r<sub>n-2</sub> = r<sub>n-1</sub>q<sub>n-1</sub> + r<sub>n</sub>,
+r<sub>n-1</sub> = r<sub>n</sub>q<sub>n</sub></var>
+
+Доведення:
+
+ОДЗ <var>(r, 0) = r</var> для будь-якого не нульового <var>r</var>.	
+  </pre>
+  </p>
+  <br>
+    <a href="../index.html">Назад</a>
+
+  </body>
+</html>
