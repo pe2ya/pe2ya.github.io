@@ -1,68 +1,366 @@
-<!DOKTYPE html>
-<html>
-	<head>
-	<title>Site</title>
-		<meta name="author" content="Петій А.Є.">
-		<meta name="description" content="Мій перший сайт">
-		<meta name="keywords" content="Петій Андрій">
-		<meta name="CatCutfdd161f539" content="165F38521A36DB41D574B12AE58E4CE7Y3331" />
-	</head>
-	<body>
-		<table border="1px">
-		<tr>
-		    <td><a href="Site_1/index.html"> Home 1</a></td>
-			<td>Основні поняття</td>
-        </tr>   
-        <tr>   
-		   <td><a href="Site_2/index.html"> Home 2</a></td>
-		   <td>Вступ до HTML</td>
-		</tr>   
-		<tr>   
-		   <td><a href="Site_3/index.html"> Home 3</a></td>
-		   <td>Форматування тексту</td>
-		</tr>   
-		<tr>   
-		   <td><a href="Site_4/index.html"> Home 4</a> </td>
-		   <td>Таблиці</td>
-		</tr>   
-		<tr>   
-		   <td><a href="Site_5/index.html"> Home 5</a> </td>
-		   <td>Посилання</td>
-		</tr>   
-		<tr>   
-		   <td><a href="Site_6/index.html"> Home 6</a></td>
-		   <td>Вставка графічних зображень</td>
-		</tr>   
-		<tr>   
-		  <td> <a href="Site_7/index.html"> Home 7</a> </td>
-		   <td>Вставка аудіо та відео контенту</td>
-		</tr>
-		<tr>
-			<td><a href="Site_8/index.html">Home_8</a></td>
-			<td>Форми</td>
-		</tr>
-		<tr>
-			<td><a href="Site_9/index.html">Home_9</a></td>
-			<td>Семантичні елементи HTML 5</td>
-		</tr>
-		<tr>
-			<td><!--<a href="Site_10/index.html">Home_10</a>--!--></td>
-			<td>10.Основи CSS_Частина_1</td>
-		</tr>
-		<tr>
-			<td><a href="Site_11/index.html">Home_11</a></td>
-			<td>10.Основи CSS_Частина_2</td>
-		</tr>
-		<tr>
-			<td><a href="Site_12/index.html">Home_12</a></td>
-			<td>10.Основи CSS_Частина_2</td>
-		</tr>
-		<tr>
-			<td><a href="Site_13/index.html">Home_13</a></td>
-			<td>10.Основи CSS_Частина_3</td>
-		</tr>
-		</table>
-	</body>
-</html>	
-	
-	
+<!DOCTYPE html>
+
+<html lang="">
+<head>
+<title>Gogopo</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+<img src="imeges/demo/backgrounds/112.jpg">
+<div class="bgded" style="background-image:url('images/demo/backgrounds/01.png');"> 
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+      <div id="logo" class="fl_left">
+        <h1><a href="index.html">Gogopo</a></h1>
+      </div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a class="drop" href="#">Pages</a>
+            <ul>
+              <li><a href="pages/gallery.html">Gallery</a></li>
+              <li><a href="pages/full-width.html">Full Width</a></li>
+              <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
+              <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
+              <li><a href="pages/basic-grid.html">Basic Grid</a></li>
+            </ul>
+          </li>
+          <li><a class="drop" href="#">Dropdown</a>
+            <ul>
+              <li><a href="#">Level 2</a></li>
+              <li><a class="drop" href="#">Level 2 + Drop</a>
+                <ul>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                  <li><a href="#">Level 3</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Level 2</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Link Text</a></li>
+          <li><a href="#">Link Text</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <div class="wrapper">
+    <article id="pageintro" class="hoc clear"> 
+      <div class="transbox">
+        <h3 class="heading">Congue ut tempor magna</h3>
+        <p>In sem convallis vitae ullamcorper ex sagittis suspendisse suscipit enim ut blandit auctor felis orci ornare eros consectetur sollicitudin lectus mi in magna.</p>
+      </div>
+      <footer><a class="btn" href="#">Donec molestie blandit</a></footer>
+    </article>
+  </div>
+</div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <article class="group">
+      <div class="one_quarter first">
+        <p class="font-xs">Finibus consectetur vulputate</p>
+        <h6 class="heading">Sed eu justo at arcu auctor rhoncus</h6>
+      </div>
+      <div class="three_quarter">
+        <p>Libero et suscipit sem tincidunt vitae porttitor mauris est quis hendrerit ante pharetra at donec feugiat rhoncus suscipit vivamus scelerisque sem quis aliquet condimentum dolor sem mollis magna id accumsan metus sem id odio.</p>
+        <p class="btmspace-30">In nec massa aliquam eu libero in purus mollis ultrices et vel nunc integer aliquet libero praesent fermentum [&hellip;]</p>
+        <footer><a class="btn" href="#">Read More &raquo;</a></footer>
+      </div>
+    </article>
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
+  <section class="hoc container clear"> 
+    <div class="sectiontitle">
+      <h6 class="heading">Dolor nulla mattis</h6>
+      <p>Leo pretium id pretium augue molestie suspendisse</p>
+    </div>
+    <ul class="nospace group elements">
+      <li class="one_third first">
+        <article><a href="#"><i class="fa fa-chain-broken"></i></a>
+          <h6 class="heading">Pretium turpis a porta erat</h6>
+          <p>Nostra per inceptos himenaeos sed eu sapien auctor pharetra ligula nec pharetra lacus [&hellip;]</p>
+          <footer><a href="#">View Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><a href="#"><i class="fa fa-ambulance"></i></a>
+          <h6 class="heading">Tristique massa arcu non ad</h6>
+          <p>Integer finibus sagittis mollis aliquam erat volutpat nulla lacinia sodales augue eu [&hellip;]</p>
+          <footer><a href="#">View Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><a href="#"><i class="fa fa-area-chart"></i></a>
+          <h6 class="heading">Consectetur diam vel eleifend</h6>
+          <p>Ornare suspendisse potenti donec rhoncus magna in tempus feugiat suspendisse auctor [&hellip;]</p>
+          <footer><a href="#">View Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third first">
+        <article><a href="#"><i class="fa fa-clock-o"></i></a>
+          <h6 class="heading">Metus nisi sed neque class</h6>
+          <p>A interdum ornare purus augue faucibus nibh sed interdum leo lorem a justo curabitur [&hellip;]</p>
+          <footer><a href="#">View Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><a href="#"><i class="fa fa-gamepad"></i></a>
+          <h6 class="heading">Aptent taciti sociosqu quam</h6>
+          <p>Dictum leo non sodales mollis ut malesuada felis ac lacinia iaculis massa libero convallis [&hellip;]</p>
+          <footer><a href="#">View Details &raquo;</a></footer>
+        </article>
+      </li>
+      <li class="one_third">
+        <article><a href="#"><i class="fa fa-thumbs-up"></i></a>
+          <h6 class="heading">Litora torquent per conubia</h6>
+          <p>Ante a imperdiet dui felis non lacus mauris risus interdum quis nulla et fringilla vestibulum [&hellip;]</p>
+          <footer><a href="#">View Details &raquo;</a></footer>
+        </article>
+      </li>
+    </ul>
+  </section>
+</div>
+<div class="wrapper bgded overlay light" style="background-image:url('images/demo/backgrounds/03.png');">
+  <section class="hoc container clear"> 
+    <ul class="nospace group">
+      <li class="one_quarter first">
+        <h3 class="heading">Massa donec</h3>
+        <p>Erat felis tempus at placerat eget elementum sit amet justo nunc luctus mattis iaculis vestibulum convallis.</p>
+        <footer><a class="btn" href="#">Urna pharetra</a></footer>
+      </li>
+      <li class="one_quarter">
+        <figure><a href="#"><img class="btmspace-30" src="images/demo/222x100.png" alt=""></a>
+          <figcaption>
+            <h6 class="heading font-x1">Sit amet consectetur</h6>
+            <footer><a href="#">View Details</a></footer>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="one_quarter">
+        <figure><a href="#"><img class="btmspace-30" src="images/demo/222x100.png" alt=""></a>
+          <figcaption>
+            <h6 class="heading font-x1">Enim luctus integer</h6>
+            <footer><a href="#">View Details</a></footer>
+          </figcaption>
+        </figure>
+      </li>
+      <li class="one_quarter">
+        <figure><a href="#"><img class="btmspace-30" src="images/demo/222x100.png" alt=""></a>
+          <figcaption>
+            <h6 class="heading font-x1">Tristique odio in</h6>
+            <footer><a href="#">View Details</a></footer>
+          </figcaption>
+        </figure>
+      </li>
+    </ul>
+  </section>
+</div>
+<div class="wrapper row3">
+  <section class="hoc container clear"> 
+    <div class="sectiontitle">
+      <h6 class="heading">Ante venenatis purus</h6>
+      <p>Bibendum ante neque ultrices eros ac luctus sapien</p>
+    </div>
+    <div class="group">
+      <figure class="one_quarter first"><a href="#"><img class="btmspace-30" src="images/demo/320x220.png" alt=""></a>
+        <figcaption>
+          <h6 class="heading font-x1">C. Name</h6>
+          <em class="font-xs">Duis euismod egestas risus</em>
+          <footer>
+            <ul class="faico clear">
+              <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+            </ul>
+          </footer>
+        </figcaption>
+      </figure>
+      <figure class="one_quarter"><a href="#"><img class="btmspace-30" src="images/demo/320x220.png" alt=""></a>
+        <figcaption>
+          <h6 class="heading font-x1">D. Name</h6>
+          <em class="font-xs">Vel lobortis nulla pulvinar</em>
+          <footer>
+            <ul class="faico clear">
+              <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+            </ul>
+          </footer>
+        </figcaption>
+      </figure>
+      <figure class="one_quarter"><a href="#"><img class="btmspace-30" src="images/demo/320x220.png" alt=""></a>
+        <figcaption>
+          <h6 class="heading font-x1">E. Name</h6>
+          <em class="font-xs">Et aliquam laoreet sollicitudin</em>
+          <footer>
+            <ul class="faico clear">
+              <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+            </ul>
+          </footer>
+        </figcaption>
+      </figure>
+      <figure class="one_quarter"><a href="#"><img class="btmspace-30" src="images/demo/320x220.png" alt=""></a>
+        <figcaption>
+          <h6 class="heading font-x1">F. Name</h6>
+          <em class="font-xs">Dolor sit amet luctus velit</em>
+          <footer>
+            <ul class="faico clear">
+              <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+            </ul>
+          </footer>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="clear"></div>
+  </section>
+</div>
+<div class="wrapper bgded overlay coloured" style="background-image:url('images/demo/backgrounds/04.png');">
+  <div class="hoc container testimonials clear"> 
+    <div class="sectiontitle">
+      <h6 class="heading">Sollicitudin quis leo</h6>
+      <p>Laoreet id etiam erat ex congue eu tincidunt a</p>
+    </div>
+    <article class="one_half first"><img src="images/demo/100x100.png" alt="">
+      <blockquote>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae phasellus iaculis nisl sed ex lobortis bibendum quis eget nunc vivamus viverra tellus.</blockquote>
+      <h6 class="heading">G. Name</h6>
+      <em>Senectus et netus et</em></article>
+    <article class="one_half"><img src="images/demo/100x100.png" alt="">
+      <blockquote>Ac nisl faucibus nec viverra eros varius donec interdum erat eu erat dictum ut rhoncus mauris in imperdiet felis turpis id accumsan nisl tempor vitae habitant morbi tristique.</blockquote>
+      <h6 class="heading">H. Name</h6>
+      <em>Malesuada fames ac</em></article>
+  </div>
+</div>
+<div class="wrapper row3">
+  <section class="hoc container clear"> 
+    <div class="sectiontitle">
+      <h6 class="heading">Amet elementum neque</h6>
+      <p>Turpis egestas praesent a condimentum leo sit</p>
+    </div>
+    <div class="group latest">
+      <article class="one_third first">
+        <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+          <figcaption>
+            <time datetime="2045-04-06T08:15+00:00"><strong>06</strong> <em>Apr</em></time>
+          </figcaption>
+        </figure>
+        <div class="txtwrap">
+          <h4 class="heading">Mauris blandit nibh non</h4>
+          <ul class="nospace meta">
+            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
+            <li><i class="fa fa-tag"></i> <a href="#">Category Name</a></li>
+          </ul>
+          <p>Sollicitudin condimentum lacus morbi vitae sapien ornare rhoncus purus vel fermentum massa nunc vitae metus risus habitant [&hellip;]</p>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </div>
+      </article>
+      <article class="one_third">
+        <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+          <figcaption>
+            <time datetime="2045-04-05T08:15+00:00"><strong>05</strong> <em>Apr</em></time>
+          </figcaption>
+        </figure>
+        <div class="txtwrap">
+          <h4 class="heading">Congue cras diam est</h4>
+          <ul class="nospace meta">
+            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
+            <li><i class="fa fa-tag"></i> <a href="#">Category Name</a></li>
+          </ul>
+          <p>Morbi tristique senectus et netus et malesuada fames ac turpis egestas nunc eget nibh et ante finibus lacinia integer [&hellip;]</p>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </div>
+      </article>
+      <article class="one_third">
+        <figure><a href="#"><img src="images/demo/320x220.png" alt=""></a>
+          <figcaption>
+            <time datetime="2045-04-04T08:15+00:00"><strong>04</strong> <em>Apr</em></time>
+          </figcaption>
+        </figure>
+        <div class="txtwrap">
+          <h4 class="heading">Volutpat in eros sit amet</h4>
+          <ul class="nospace meta">
+            <li><i class="fa fa-user"></i> <a href="#">Admin</a></li>
+            <li><i class="fa fa-tag"></i> <a href="#">Category Name</a></li>
+          </ul>
+          <p>Neque sem vulputate id lacus vitae venenatis dignissim enim quisque non justo vitae eros sodales varius suspendisse [&hellip;]</p>
+          <footer><a href="#">Read More &raquo;</a></footer>
+        </div>
+      </article>
+    </div>
+    <div class="clear"></div>
+  </section>
+</div>
+<div class="wrapper row4">
+  <footer id="footer" class="hoc clear"> 
+    <div class="one_third first">
+      <h6 class="heading">Potenti proin congue</h6>
+      <p class="nospace btmspace-30">Ornare erat a ultricies odio vestibulum nec curabitur at lacinia sapien.</p>
+      <form method="post" action="#">
+        <fieldset>
+          <legend>Newsletter:</legend>
+          <input class="btmspace-15" type="text" value="" placeholder="Name">
+          <input class="btmspace-15" type="text" value="" placeholder="Email">
+          <button type="submit" value="submit">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Vehicula consectetur erat</h6>
+      <ul class="nospace linklist">
+        <li>
+          <article>
+            <h2 class="nospace font-x1"><a href="#">Sed dictum quisque non</a></h2>
+            <time class="font-xs block btmspace-10" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
+            <p class="nospace">Dolor et posuere pretium nulla fermentum eros tincidunt sodales porttitor [&hellip;]</p>
+          </article>
+        </li>
+        <li><a href="#">Sollicitudin ante in dignissim</a></li>
+        <li><a href="#">Leo dui at molestie sem</a></li>
+      </ul>
+    </div>
+    <div class="one_third">
+      <h6 class="heading">Ullamcorper commodo</h6>
+      <ul class="nospace btmspace-30 linklist contact">
+        <li><i class="fa fa-map-marker"></i>
+          <address>
+          Street Name &amp; Number, Town, Postcode/Zip
+          </address>
+        </li>
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>23
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+      <ul class="faico clear">
+        <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+        <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
+        <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+        <li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
+        <li><a class="faicon-vk" href="#"><i class="fa fa-vk"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+</div>
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; <a href="pages/white.html">2017</a> - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </div>
+</div>
+<a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="layout/scripts/jquery.linoxmenu.js"></script>
+</body>
+</html>
