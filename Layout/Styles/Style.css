@@ -76,11 +76,12 @@ a {
 		width: 100%
 	}
 
-	h1 {
-		padding-right: 25%;
-	}
-
 	.start {
 		margin-top: 30%;
 		padding-right: 10%;
 	}
+
+	.title {
+		width: 50%;
+	}
+}
