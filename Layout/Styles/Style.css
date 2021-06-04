@@ -1,16 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair+Display+SC:400,700&subset=latin,cyrillic);
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-	body {
-		background-color: #e8ebe8;
-		width: 100%
-	}
-	h1 {
-		padding-right: 10%;
-	}
-	.start {
-		margin-top: 20%;
-		padding-right: 10%;
-	}
 h1 {
 	font-family: 'Playfair Display SC', serif;
 	font-weight: 200;
@@ -81,4 +69,18 @@ a {
 		top: 0px;
 		opacity: 1;
 	}
+	}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	body {
+		width: 100%
+	}
+
+	h1 {
+		padding-right: 25%;
+	}
+
+	.start {
+		margin-top: 30%;
+		padding-right: 10%;
 	}
