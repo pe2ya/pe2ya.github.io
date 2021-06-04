@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair+Display+SC:400,700&subset=latin,cyrillic);
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 	body {
+		background-color: #e8ebe8;
 		width: 100%
 	}
 	h1 {
