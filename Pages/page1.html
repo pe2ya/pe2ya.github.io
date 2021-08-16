@@ -6,11 +6,31 @@
     <title></title>
 </head>
 <body>
-    <div>
-        <h1>Задайте значення</h1>
-    </div>
-    <div>
-        <div></div>
-    </div>
+    <button>клик</button>
+
+    <script>
+        function shuffle(array) {
+            var currentIndex = array.length, temporaryValue, randomIndex;
+            while (0 !== currentIndex) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+        }
+        var letters = 'ABCD'.split(' ');
+        var result = shuffle(letters);
+
+        document.querySelector('button').onclick = function getLetters(len) {
+            var arr = result.slice(result.length - len);
+            result.length -= len;
+            return arr;
+        }
+
+        alert(getLetters(1));
+    </script>
 </body>
 </html>
