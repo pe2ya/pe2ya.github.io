@@ -1,11 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic|Playfair+Display+SC:400,700&subset=latin,cyrillic);
 h1 {
-	font-family: 'Playfair Display SC', serif;
 	font-weight: 200;
 	letter-spacing: 4px;
 	text-align: center;
 	font-size: 36px;
 	color: #333333;
+	font-family: 'Trebuchet MS', sans-serif;
 }
 .title {
 	width: 30%;
@@ -94,6 +94,7 @@ a {
 	border-radius: 5%;
 	box-shadow: 0 .25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 .375em 1.25em 0 rgba(0, 0, 0, 0.19);
 	cursor: pointer;
+	font-family: 'Trebuchet MS', sans-serif;
 }
 
 	.player p {
