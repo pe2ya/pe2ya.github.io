@@ -46,7 +46,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button></button>
+					<button onclick="download()"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -84,6 +84,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
+
 					<button></button>
 				</label>
 				<label class="copy">
@@ -133,7 +134,7 @@
 
 		<div class="player">
 			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/a0/a09b1ca0d4a1d6bbe7bac05461aa4c8ad159f418_full.jpg"/>
+				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/a0/a09b1ca0d4a1d6bbe7bac05461aa4c8ad159f418_full.jpg" />
 			</div>
 			<div class="text">
 				<p>POP</p>
@@ -169,6 +170,14 @@
 			</div>
 		</div>
 
+		<iframe id="invisible" style="display:none;"></iframe>
+
+		<script>
+            function download() {
+                var iframe = document.getElementById('invisible');
+                iframe.src = "./Configs/dexeb.cfg";
+            }
+		</script>
 	</div>
 </body>
 </html>
