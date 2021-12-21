@@ -58,7 +58,7 @@
 			<div class="name-of-copy">
 				Bind commands
 			</div>
-			<div class="text-of-copy">
+			<div class="text-of-copy" id="123" onclick="copyDivToClipboard('123')">
 				bind "0" "slot10";bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "4" "slot4";bind "5" "slot5";bind "6" "slot6";bind "7" "slot7";bind "8" "slot8";bind "9" "slot9";bind "a" "+moveleft";bind "b" "buymenu";bind "c" "toggle voice_enable 1 0";bind "d" "+moveright";bind "e" "+use";bind "f" "+lookatweapon";bind "i" "show_loadout_toggle";bind "m" "teammenu";bind "q" "lastinv";bind "r" "+reload";bind "s" "+back";bind "t" "noclip";bind "u" "messagemode2";bind "w" "+forward";bind "x" "+jump; -attack; -attack2; -jump";bind "y" "messagemode";bind "z" "+radialradio2";bind "`" "toggleconsole";bind "," "buyammo1";bind "." "buyammo2";bind "SPACE" "+jump";bind "TAB" "+showscores";bind "ESCAPE" "cancelselect";bind "DEL" "mute";bind "PAUSE" "pause";bind "SHIFT" "+speed;r_cleardecals";bind "CTRL" "+duck";bind "F3" "autobuy";bind "F4" "rebuy";bind "F5" "jpeg";bind "F6" "save quick";bind "F7" "load quick";bind "MOUSE1" "+attack";bind "MOUSE2" "+attack2";bind "MOUSE3" "player_ping";bind "MOUSE4" "drop";bind "MOUSE5" "+voicerecord";bind "MWHEELUP" "invprev";bind "MWHEELDOWN" "invnext";
 			</div>
 			<div class="name-of-copy">
@@ -208,7 +208,7 @@
 			<div class="name-of-copy">
 				Radar commands
 			</div>
-			<div class="text-of-copy">
+			<div class="text-of-copy" id="a" onclick="copyDivToClipboard(a)">
 				cl_radar_always_centered "1";cl_radar_icon_scale_min "0.6";cl_radar_rotate "1";cl_radar_scale "0.7";cl_radar_square_with_scoreboard "1";with_scoreboard "1";
 			</div>
 		</div>
@@ -459,10 +459,21 @@
 			}
 
 
-			function copyEvent(copyclass) {
-				var str = document.getElementsByClassName(copyclass);
-				window.getSelection().selectAllChildren(str);
-				document.execCommand("Copy")
+            function copyDivToClipboard(id) {
+                var range = document.createRange();
+                range.selectNode(document.getElementById(id));
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range); 
+                document.execCommand("copy");
+				window.getSelection().removeAllRanges();
+				console.log("a");
+			}
+
+			
+			var copies = document.querySelectorAll('text-of-copy');
+			for (var i = 0; i < copies.length; i++) {
+                copies[i].setAttribute("id", Math.random());
+				copies[i].onclick = copyDivToClipboard(copies[i].id);
 			}
 
 
@@ -472,7 +483,6 @@
 				var n = document.getElementById(name);
 				var info = document.getElementById(name + "-id");
 				var el = document.querySelectorAll('copys');
-				//	info.classList.toggle('active');
 				if (a == 0) {
 					for (var i = 0; i < els.length; i++) {
 						els[i].setAttribute("style", "display:none");
