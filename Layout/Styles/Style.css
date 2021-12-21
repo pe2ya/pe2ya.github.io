@@ -142,24 +142,81 @@ a {
 	text-decoration: none;
 	display: inline-block;
 	cursor: pointer;
-	z-index: 100;
+	z-index: 1;
 	opacity: 0;
 	transition: 0.3s;
 }
 
 .copys {
-	text-align:center;
-	background-color: red;
-	margin:50%;
-	margin-top:0;
-	display:none;
+	position: absolute;
+	text-align: center;
+	background-color: white;
+	margin-top: 0;
+	margin-left: 15em;
+	z-index: -1;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	gap: .5em;
+	width: 70%;
+	height: 80%;
+	max-width: 55em;
+	min-width: 10.5em;
+	padding-bottom: .5em;
+	border-radius: 2%;
+	box-shadow: 0 .25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 .375em 1.25em 0 rgba(0, 0, 0, 0.19);
+	overflow: hidden;
+	font-family: 'Trebuchet MS', sans-serif;
+	opacity: 0;
 }
 
-	.player:hover .buttons label {
-		opacity:1;
-		transform: scale(1.1);
-		transition: 0.3s;
+	.copys.active {
+		opacity: 1;
+		transition: .5s;
 	}
+
+	.copys .text-of-copy {
+		flex: 1;
+		text-align: left;
+		max-height: 3em;
+		width: 90%;
+		margin: 0 auto;
+		overflow: hidden;
+		background-color: #f2f2f2;
+		border-radius: 4px;
+	}
+
+	.copys .name-of-copy {
+		flex: 1;
+		font-size: 1.4em;
+		text-align: left;
+		margin-left: 1em;
+		width: 92.5%;
+		color: #292929;
+		border-top: 1px solid black;
+	}
+
+		.copys .name-of-copy:nth-child(1) {
+			border-top: none;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		.player:hover .buttons label {
+			opacity: 1;
+			transform: scale(1.1);
+			transition: 0.3s;
+		}
 
 	.player:hover img {
 		opacity: 0;
