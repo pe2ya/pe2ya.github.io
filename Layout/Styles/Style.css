@@ -144,6 +144,14 @@ a {
 		transition: 0.3s;
 	}
 
+.copys {
+	text-align:center;
+	background-color: red;
+	margin:50%;
+	margin-top:0;
+	display:none;
+}
+
 	.player:hover .buttons label {
 		opacity:1;
 		transform: scale(1.1);

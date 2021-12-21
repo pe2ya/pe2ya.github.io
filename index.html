@@ -46,12 +46,20 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button onclick="downloadDexeb()"></button>
+					<button onclick="download('dexeb')"></button>
 				</label>
 				<label class="copy">
 					copy
 					<button onclick="toggleHidden('Dexeb')"></button>
 				</label>
+			</div>
+		</div>
+		<div id="Dexeb-id" class="copys">
+			<div class="name-of-copy">
+
+			</div>
+			<div class="text-of-copy">
+
 			</div>
 		</div>
 
@@ -65,7 +73,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button onclick="downloadz1pls()"></button>
+					<button onclick="download('z1pls')"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -85,7 +93,7 @@
 				<label class="download">
 					download
 
-					<button onclick="downloadPe2Ya()"></button>
+					<button onclick="download('pe2ya')"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -104,7 +112,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button> onclick="downloadlesha13()"</button>
+					<button onclick="download('lesh13')"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -123,7 +131,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button onclick="downloadGunter()"></button>
+					<button onclick="download('gunter')"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -142,7 +150,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button onclick="downloadPOP()"></button>
+					<button onclick="download('pop')"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -161,7 +169,7 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button onclick="downloadPanda()"></button>
+					<button onclick="download('panda')"></button>
 				</label>
 				<label class="copy">
 					copy
@@ -173,84 +181,49 @@
 		<iframe id="invisible" style="display:none;"></iframe>
 
 		<script>
-			function downloadDexeb() {
+
+			function download(name) {
 				var iframe = document.getElementById('invisible');
-				iframe.src = "./Configs/dexeb.cfg";
+				iframe.src = "./Configs/" + name + ".cfg";
 			}
-
-            function downloadz1pls() {
-                var iframe = document.getElementById('invisible');
-                iframe.src = "./Configs/z1pls.cfg";
-			}
-
-            function downloadPe2Ya() {
-                var iframe = document.getElementById('invisible');
-                iframe.src = "./Configs/dexeb.cfg";
-			}
-
-            function downloadlesha13() {
-                var iframe = document.getElementById('invisible');
-                iframe.src = "./Configs/lesha13.cfg";
-			}
-
-            function downloadGunter() {
-                var iframe = document.getElementById('invisible');
-                iframe.src = "./Configs/gunter.cfg";
-			}
-
-            function downloadPOP() {
-                var iframe = document.getElementById('invisible');
-                iframe.src = "./Configs/pop.cfg";
-			}
-
-            function downloadPanda() {
-                var iframe = document.getElementById('invisible');
-                iframe.src = "./Configs/panda.cfg";
-            }
 
 
 			function copyEvent(copyclass) {
-                var str = document.getElementsByClassName(copyclass);
-                window.getSelection().selectAllChildren(str);
-                document.execCommand("Copy")
+				var str = document.getElementsByClassName(copyclass);
+				window.getSelection().selectAllChildren(str);
+				document.execCommand("Copy")
 			}
 
-            function pcsh1() {
-                var x = document.getElementById("pc1");
-                if (x.style.display === "none") {
-                    x.style.display = "block";
-                } else {
-                    x.style.display = "none";
-                }
-			}
 
 			var a = 0;
 			function toggleHidden(name) {
 				var els = document.querySelectorAll("[class*= player]");
-                var n = document.getElementById(name);
+				var n = document.getElementById(name);
 				if (a == 0) {
 					for (var i = 0; i < els.length; i++) {
 						els[i].setAttribute("style", "display:none");
 
 					}
 
-                    n.style.display = "block";
+					n.style.display = "block";
 					n.setAttribute("style", "margin-left:45%;margin-right:50%");
-                    document.getElementById("container").setAttribute("style", "margin:0");
+					document.getElementById("container").setAttribute("style", "margin:0");
+					document.getElementById(name + "-id").setAttribute("style", "display:block");
 					a++;
 				}
 				else {
-                    for (var i = 0; i < els.length; i++) {
-                        els[i].setAttribute("style", "display:block");
+					for (var i = 0; i < els.length; i++) {
+						els[i].setAttribute("style", "display:block");
 					}
 
-                    n.style.display = "block";
+					n.style.display = "block";
 					n.setAttribute("style", "margin-left:0;margin-right:0");
-                    document.getElementById("container").setAttribute("style", "margin:8em;margin-top: 3em;");
-                    a--;
+					document.getElementById("container").setAttribute("style", "margin:8em;margin-top: 3em;");
+					document.getElementById(name + "-id").setAttribute("style", "display:none");
+					a--;
 				}
 
-            }
+			}
 
 		</script>
 	</div>
