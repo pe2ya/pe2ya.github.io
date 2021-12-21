@@ -77,12 +77,13 @@ a {
 	background-color: dodgerblue;
 }
 
-.container {
+#container {
 	margin: 8em;
 	margin-top: 3em;
 	display: flex;
 	gap: 1.5em;
 	flex-wrap: wrap;
+	transition: all .5s ease-in-out;
 }
 
 .player {
@@ -95,6 +96,7 @@ a {
 	box-shadow: 0 .25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 .375em 1.25em 0 rgba(0, 0, 0, 0.19);
 	cursor: pointer;
 	font-family: 'Trebuchet MS', sans-serif;
+	transition: all .5s ease-in-out;
 }
 
 	.player p {
@@ -159,6 +161,9 @@ a {
 		transition: 0.3s;
 	}
 
+.hidden {
+	display:none;
+}
 
 	@keyframes mymove {
 		from {

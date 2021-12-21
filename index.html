@@ -35,8 +35,8 @@
 	<li>cl_crosshairdot 0</li>
 	</ul>
 	-->
-	<div class="container">
-		<div class="player">
+	<div id="container">
+		<div class="player" id="Dexeb">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/6c/6c731f034857eff553e9c7641cffb134b4fd5d0e_full.jpg" />
 			</div>
@@ -46,16 +46,16 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button onclick="download()"></button>
+					<button onclick="downloadDexeb()"></button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('Dexeb')"></button>
 				</label>
 			</div>
 		</div>
 
-		<div class="player">
+		<div class="player" id="z1pls">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/47/47ef815ca742e0eb7619fc848989c7f9a8a7df45_full.jpg" />
 			</div>
@@ -65,16 +65,16 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button></button>
+					<button onclick="downloadz1pls()"></button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('z1pls')"></button>
 				</label>
 			</div>
 		</div>
 
-		<div class="player">
+		<div class="player" id="Pe2Ya">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/0a/0acfbbe36e770d8e972e40be38cf4f09020edca6_full.jpg" />
 			</div>
@@ -85,16 +85,16 @@
 				<label class="download">
 					download
 
-					<button></button>
+					<button onclick="downloadPe2Ya()"></button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('Pe2Ya')"></button>
 				</label>
 			</div>
 		</div>
 
-		<div class="player">
+		<div class="player" id="lesha13">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ca/ca20171e3da060aade4e0586ced3661b7fcc3336_full.jpg" />
 			</div>
@@ -104,16 +104,16 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button></button>
+					<button> onclick="downloadlesha13()"</button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('lesha13')"></button>
 				</label>
 			</div>
 		</div>
 
-		<div class="player">
+		<div class="player" id="Gunter">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/04/04825e15d7df9c199f027a6afb1a58fc10fdbb40_full.jpg" />
 			</div>
@@ -123,16 +123,16 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button></button>
+					<button onclick="downloadGunter()"></button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('Gunter')"></button>
 				</label>
 			</div>
 		</div>
 
-		<div class="player">
+		<div class="player" id="POP">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/a0/a09b1ca0d4a1d6bbe7bac05461aa4c8ad159f418_full.jpg" />
 			</div>
@@ -142,16 +142,16 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button></button>
+					<button onclick="downloadPOP()"></button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('POP')"></button>
 				</label>
 			</div>
 		</div>
 
-		<div class="player">
+		<div class="player" id="Panda">
 			<div class="img-container">
 				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/da/dafa43ab87a3fdd242749b9e87a3ca8a0d4978ab_full.jpg" />
 			</div>
@@ -161,11 +161,11 @@
 			<div class="buttons">
 				<label class="download">
 					download
-					<button></button>
+					<button onclick="downloadPanda()"></button>
 				</label>
 				<label class="copy">
 					copy
-					<button></button>
+					<button onclick="toggleHidden('Panda')"></button>
 				</label>
 			</div>
 		</div>
@@ -173,10 +173,85 @@
 		<iframe id="invisible" style="display:none;"></iframe>
 
 		<script>
-            function download() {
+			function downloadDexeb() {
+				var iframe = document.getElementById('invisible');
+				iframe.src = "./Configs/dexeb.cfg";
+			}
+
+            function downloadz1pls() {
+                var iframe = document.getElementById('invisible');
+                iframe.src = "./Configs/z1pls.cfg";
+			}
+
+            function downloadPe2Ya() {
                 var iframe = document.getElementById('invisible');
                 iframe.src = "./Configs/dexeb.cfg";
+			}
+
+            function downloadlesha13() {
+                var iframe = document.getElementById('invisible');
+                iframe.src = "./Configs/lesha13.cfg";
+			}
+
+            function downloadGunter() {
+                var iframe = document.getElementById('invisible');
+                iframe.src = "./Configs/gunter.cfg";
+			}
+
+            function downloadPOP() {
+                var iframe = document.getElementById('invisible');
+                iframe.src = "./Configs/pop.cfg";
+			}
+
+            function downloadPanda() {
+                var iframe = document.getElementById('invisible');
+                iframe.src = "./Configs/panda.cfg";
             }
+
+
+			function copyEvent(copyclass) {
+                var str = document.getElementsByClassName(copyclass);
+                window.getSelection().selectAllChildren(str);
+                document.execCommand("Copy")
+			}
+
+            function pcsh1() {
+                var x = document.getElementById("pc1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+			}
+
+			var a = 0;
+			function toggleHidden(name) {
+				var els = document.querySelectorAll("[class*= player]");
+                var n = document.getElementById(name);
+				if (a == 0) {
+					for (var i = 0; i < els.length; i++) {
+						els[i].setAttribute("style", "display:none");
+
+					}
+
+                    n.style.display = "block";
+					n.setAttribute("style", "margin-left:45%;margin-right:50%");
+                    document.getElementById("container").setAttribute("style", "margin:0");
+					a++;
+				}
+				else {
+                    for (var i = 0; i < els.length; i++) {
+                        els[i].setAttribute("style", "display:block");
+					}
+
+                    n.style.display = "block";
+					n.setAttribute("style", "margin-left:0;margin-right:0");
+                    document.getElementById("container").setAttribute("style", "margin:8em;margin-top: 3em;");
+                    a--;
+				}
+
+            }
+
 		</script>
 	</div>
 </body>
