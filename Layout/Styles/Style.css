@@ -8,7 +8,7 @@ h1 {
 	font-family: 'Trebuchet MS', sans-serif;
 }
 .title {
-	width: 30%;
+	width: 100%;
 	margin: auto;
 	text-align: center;
 }
@@ -18,7 +18,7 @@ h1 {
 	position: relative;
 	display: block;
 	font-size: 13px;
-	width: 50%;
+	width: 25%;
 	margin: auto;
 }
 .bottomtitle:before {
@@ -79,11 +79,12 @@ a {
 
 #container {
 	margin: 8em;
-	margin-top: 3em;
+	margin-top: 0em;
 	display: flex;
 	gap: 1.5em;
 	flex-wrap: wrap;
 	transition: all .5s ease-in-out;
+	height:100%
 }
 
 .player {
@@ -97,52 +98,54 @@ a {
 	cursor: pointer;
 	font-family: 'Trebuchet MS', sans-serif;
 	transition: all .5s ease-in-out;
+
 }
 
-	.player p {
-		opacity: 1;
-		transition: 0.3s;
-	}
-	.player .img-container {
-		flex: 1;
-		width: 80%;
-		height: 60%;
-		display: block;
-		margin: 1em;
-		border-radius: 5%;
-		overflow: hidden;
-		text-align: center;
-		opacity: 1;
-	}
+.player p {
+	opacity: 1;
+	transition: 0.3s;
+}
 
-		.player .img-container img {
-			width: auto;
-			height: 100%;
-			opacity: 1;
-			transition: 0.3s;
-		}
+.player .img-container {
+	flex: 1;
+	width: 80%;
+	height: 60%;
+	display: block;
+	margin: 1em;
+	border-radius: 5%;
+	overflow: hidden;
+	text-align: center;
+	opacity: 1;
+}
+
+.player .img-container img {
+	width: auto;
+	height: 100%;
+	opacity: 1;
+	transition: 0.3s;
+}
 
 .player .text {
 	text-align: center;
 	font-size: 1.6em;
 }
 
-	.player .buttons label {
-		width: 80%;
-		height: 2em;
-		min-height: 2em;
-		border-radius: 1em 1em 1em 1em;
-		color: white;
-		margin: 1em;
-		line-height: 2em;
-		text-align: center;
-		text-decoration: none;
-		display: inline-block;
-		cursor: pointer;
-		z-index: 100;
-		opacity: 0;
-		transition: 0.3s;
-	}
+.player .buttons label {
+	width: 80%;
+	height: 2em;
+	min-height: 2em;
+	border-radius: 1em 1em 1em 1em;
+	color: white;
+	margin: 1em;
+	line-height: 2em;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	cursor: pointer;
+	z-index: 100;
+	opacity: 0;
+	transition: 0.3s;
+}
 
 .copys {
 	text-align:center;
