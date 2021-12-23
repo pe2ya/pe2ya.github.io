@@ -2,12 +2,25 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width">
-    <title>Тест</title>
-    <link rel="stylesheet" href="./Layout/Styles/Style.css" type="text/css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width">
+	<title>Тест</title>
+	<link rel="stylesheet" href="./Layout/Styles/Style.css" type="text/css">
 
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$(".text-of-copy").click(function (event) {
+				var range = document.createRange();
+				range.selectNode(this);
+				window.getSelection().removeAllRanges();
+				window.getSelection().addRange(range);
+				document.execCommand("copy");
+				window.getSelection().removeAllRanges();
+				alert("text has been copied");
+			});
+        });
+	</script>
 </head>
 <body>
 	<div class="title" id="header">
@@ -61,7 +74,7 @@
 			<div class="text-of-copy" id="123" onclick="copyDivToClipboard('123')">
 				bind "c" "toggle voice_enable 1 0";bind "f" "+lookatweapon";bind "t" "noclip";bind "x" "+jump; -attack; -attack2; -jump";bind "z" "+radialradio2";bind "SHIFT" "+speed;r_cleardecals";bind "F3" "autobuy";bind "F4" "rebuy";bind "MOUSE3" "player_ping";bind "MOUSE4" "drop";bind "MOUSE5" "+voicerecord";
 			</div>
-			<div class="name-of-copy">
+			<div class="name-of-copy" id="1">
 				Crosshair commands
 			</div>
 			<div class="text-of-copy">
@@ -458,7 +471,7 @@
 				iframe.src = "./Configs/" + name + ".cfg";
 			}
 
-
+			/*
             function copyDivToClipboard(id) {
                 var range = document.createRange();
                 range.selectNode(document.getElementById(id));
@@ -468,15 +481,8 @@
 				window.getSelection().removeAllRanges();
 				console.log("a");
 			}
-
+			*/
 			
-			var copies = document.querySelectorAll('text-of-copy');
-			for (var i = 0; i < copies.length; i++) {
-                copies[i].setAttribute("id", Math.random());
-				copies[i].onclick = copyDivToClipboard(copies[i].id);
-			}
-
-
 			var a = 0;
 			function toggleHidden(name) {
 				var els = document.querySelectorAll("[class*= player]");
