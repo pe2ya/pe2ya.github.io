@@ -156,8 +156,7 @@ a {
 	z-index: -1;
 	display: flex;
 	flex-flow: column;
-	justify-content: center;
-	gap: .5em;
+	gap: 1em;
 	width: 70%;
 	height: 80%;
 	max-width: 55em;
@@ -168,6 +167,21 @@ a {
 	overflow: hidden;
 	font-family: 'Trebuchet MS', sans-serif;
 	opacity: 0;
+	overflow-y: scroll;
+}
+::-webkit-scrollbar {
+	width: 10px;
+	background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: darkgrey;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+	background-color: white;
 }
 
 	.copys.active {
@@ -179,10 +193,9 @@ a {
 	.copys .text-of-copy {
 		flex: 1;
 		text-align: left;
-		max-height: 3em;
 		width: 90%;
+		height: fit-content;
 		margin: 0 auto;
-		overflow: hidden;
 		background-color: #f2f2f2;
 		border-radius: 4px;
 		cursor: pointer;
