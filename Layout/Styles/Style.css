@@ -153,16 +153,16 @@ a {
 	background-color: white;
 	margin-top: 0;
 	margin-left: 15em;
+	margin-right: 1em;
 	z-index: -1;
 	display: flex;
 	flex-flow: column;
 	gap: 1em;
-	width: 70%;
+	width: initial;
 	height: 80%;
-	max-width: 55em;
 	min-width: 10.5em;
 	padding-bottom: .5em;
-	border-radius: 2%;
+	border-radius: 10px;
 	box-shadow: 0 .25em 0.5em 0 rgba(0, 0, 0, 0.2), 0 .375em 1.25em 0 rgba(0, 0, 0, 0.19);
 	overflow: hidden;
 	font-family: 'Trebuchet MS', sans-serif;
@@ -171,17 +171,12 @@ a {
 }
 ::-webkit-scrollbar {
 	width: 10px;
-	background-color: white;
+	background-color: none;
 }
 
 ::-webkit-scrollbar-thumb {
 	border-radius: 10px;
 	background-color: darkgrey;
-}
-
-::-webkit-scrollbar-track {
-	border-radius: 10px;
-	background-color: white;
 }
 
 	.copys.active {
@@ -209,6 +204,7 @@ a {
 		width: 92.5%;
 		color: #292929;
 		border-top: 1px solid black;
+		margin-bottom: 1em;
 	}
 
 		.copys .name-of-copy:nth-child(1) {
