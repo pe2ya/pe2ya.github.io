@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../Layout/Style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <title></title>
+</head>
+<body>
+
+    <h2>Concerts</h2>
+    <div>
+        <select class="custom-select sources" placeholder="Select Year" name="sources" id="sources">
+            <option value="">Select an option&hellip;</option>
+            <option value="2021">2021</option>
+            <option value="2020">2020</option>
+            <option value="2019">2019</option>
+            <option value="2018">2018</option>
+        </select>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(".custom-select").each(function () {
+            var classes = $(this).attr("class"),
+                id = $(this).attr("id"),
+                name = $(this).attr("name");
+            var template = '<div class="' + classes + '">';
+            template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
+            template += '<div class="custom-options">';
+            $(this).find("option").each(function () {
+                template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
+            });
+            template += '</div></div>';
+
+            $(this).wrap('<div class="custom-select-wrapper"></div>');
+            $(this).hide();
+            $(this).after(template);
+        });
+        $(".custom-option:first-of-type").hover(function () {
+            $(this).parents(".custom-options").addClass("option-hover");
+        }, function () {
+            $(this).parents(".custom-options").removeClass("option-hover");
+        });
+        $(".custom-select-trigger").on("click", function () {
+            $('html').one('click', function () {
+                $(".custom-select").removeClass("opened");
+            });
+            $(this).parents(".custom-select").toggleClass("opened");
+            event.stopPropagation();
+        });
+        $(".custom-option").on("click", function () {
+            $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
+            $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
+            $(this).addClass("selection");
+            $(this).parents(".custom-select").removeClass("opened");
+            $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
+        });
+    </script>
+    <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="../index.html">Home</a></li>
+                <li class="list-inline-item"><a href="./News.html">News</a></li>
+                <li class="list-inline-item"><a href="./Concert.html">Concert</a></li>
+                <li class="list-inline-item"><a href="./Album.html">Album</a></li>
+                <li class="list-inline-item"><a href="./About_us.html">About us</a></li>
+            </ul>
+            <p class="copyright">Parchanti © 2022</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -2,609 +2,139 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width">
-	<title>Тест</title>
-	<link rel="stylesheet" href="./Layout/Styles/Style.css" type="text/css">
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script>
-		$(document).ready(function () {
-			$(".text-of-copy").click(function (event) {
-				var range = document.createRange();
-				range.selectNode(this);
-				window.getSelection().removeAllRanges();
-				window.getSelection().addRange(range);
-				document.execCommand("copy");
-				window.getSelection().removeAllRanges();
-				alert("text has been copied");
-			});
-		});
-
-
-	</script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./Layout/Style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <title></title>
 </head>
 <body>
-	<div class="title" id="header">
-		<h1>TringsGaming players configs</h1>
-		<span class="bottomtitle">
-			<p>by Pe2Ya</p>
-		</span>
-	</div>
-	<!--
-	<div class="start">
-		<p><a href="./Pages/players/pe2ya.html">Почати</a></p>
-	</div>
-	<ul>
-	<li>bind x "toggle cl_crosshaircolor_g 255 50; toggle cl_crosshaircolor_r 50 255"</li>
-	<li>bind z "+jump; -attack; -attack2; -jump"</li>
-	<li>bind v "+voicerecord"</li>
-	<li>bind shift "+speed;r_cleardecals"</li>
-	<li>bind mouse4 "slot4"</li>
-	<li>bind mouse5 "+jump"</li>
-	<li>bind mouse3 "toggle cl_crosshairgap -5 -2.5"</li>
-	<li>bind f10 "disconnect"</li>
-	<li>cl_crosshairstyle 4</li>
-	<li>cl_crosshairgap -5</li>
-	<li>cl_crosshairsize 0.8</li>
-	<li>cl_crosshairdot 0</li>
-	</ul>
-	-->
-	<div id="container">
-		<div class="player" id="Dexeb">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/6c/6c731f034857eff553e9c7641cffb134b4fd5d0e_full.jpg" />
-			</div>
-			<div class="text">
-				<p>Dexeb</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-					<button onclick="download('dexeb')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('Dexeb')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="Dexeb-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
+    <header>
+        <div class="logo">
+            <a href="./index.html">
+                <div class="img-container"><img src="Images/logo.png"></div>
+                Parchanti
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./Pages/News.html">NEWS</a></li>
+                <li><a href="./Pages/Concert.html">CONCERT</a></li>
+                <li><a href="./Pages/Album.html">ALBUMS</a></li>
+                <li><a href="./Pages/About_us.html">ABOUT US</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="photos">
+            <label class="buttons">
+                <div class="arrow-container">
+                    <img class="original" src="Images/left-arrow.png">
+                </div>
+                <button class="button" onclick="GetPrev()"></button>
+            </label>
+            <div class="photos-container">
+                <img class="photos-preview" src="Images/preview_photo1.jpg">
+                <img class="photos-preview" src="Images/preview_photo2.jpg">
+                <img class="photos-preview" src="Images/preview_photo3.jpg">
+            </div>
+            <label class="buttons">
+                <div class="arrow-container">
+                    <img class="original" src="Images/right-arrow.png">
+                </div>
+                <button class="button" onclick="GetNext()"></button>
+            </label>
+        </div>
 
-				<div class="text-of-copy">
-					bind c "toggle voice_enable 1 0"; bind f "+lookatweapon"; bind t "noclip"; bind x "+jump; -attack; -attack2; -jump"; bind z "+radialradio2"; bind SHIFT "+speed;r_cleardecals"; bind F3 "autobuy"; bind F4 "rebuy"; bind MOUSE3 "player_ping";
-				</div>
-				<div class="text-of-copy">
-					bind MOUSE4 "drop"; bind MOUSE5 "+voicerecord";
-				</div>
+        <h2> NEWS</h2>
 
-			<div class="name-of-copy" id="1">
-				Crosshair commands
-			</div>
+        <div class="text">
+            <h4>New Albun realese</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut lorem eget odio molestie efficitur quis et ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus in luctus elit. In facilisis et urna sit amet imperdiet. Donec dignissim eu dui eget elementum. Praesent aliquam lectus.</p>
+            <h4>Concert tour 2022</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum, eros quis ultricies porta, risus sapien malesuada lacus, sed tincidunt metus sapien non neque. Etiam in nisi massa. Nullam bibendum imperdiet odio in commodo. Ut convallis dolor euismod tellus finibus egestas. Cras non arcu nec dui pretium pellentesque. Suspendisse euismod.</p>
+        </div>
 
-				<div class="text-of-copy">
-					cl_crosshair_drawoutline 0; cl_crosshair_dynamic_maxdist_splitratio 0.000000; cl_crosshair_dynamic_splitalpha_innermod 1; cl_crosshair_dynamic_splitalpha_outermod 0.300000; cl_crosshair_dynamic_splitdist 5; cl_crosshair_friendly_warning 1;
-				</div>
-				<div class="text-of-copy">
-					cl_crosshair_outlinethickness 1; cl_crosshair_sniper_show_normal_inaccuracy 0; cl_crosshair_sniper_width 1; cl_crosshair_t 0; cl_crosshairalpha 255; cl_crosshaircolor 4; cl_crosshaircolor_b 0.000000; cl_crosshaircolor_g 0.000000;
-				</div>
-				<div class="text-of-copy">
-					cl_crosshaircolor_r 255.000000; cl_crosshairgap -2.183125; cl_crosshairgap_useweaponvalue 0; cl_crosshairsize 2.291741; cl_crosshairstyle 4; cl_crosshairthickness 0;
-				</div>
+        <div class="btn-more-info">
+            <button class="button"></button>
+            <p> more information </p>
+        </div>
 
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
+        <h2>CONCERT TOUR 2022</h2>
 
-				<div class="text-of-copy">
-					net_graph 1; net_graphholdsvframerate 0; net_graphipc 0; net_graphproportionalfont 0; net_graphshowsvframerate 0;
-				</div>
+        <div class="info-table">
+            <table>
+                <tr>
+                    <th>Town</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Anchorage</td>
+                    <td>4.3.2021</td>
+                </tr>
+                <tr>
+                    <td>Fiarbanks</td>
+                    <td>14.3.2021</td>
+                </tr>
+                <tr>
+                    <td>Kenai</td>
+                    <td>24.3.2021</td>
+                </tr>
+                <tr>
+                    <td>Ketchinkan</td>
+                    <td>7.4.2021</td>
+                </tr>
+                <tr>
+                    <td>Kotzebue</td>
+                    <td>17.4.2021</td>
+                </tr>
+            </table>
+        </div>
 
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
+        <div class="btn-more-info">
+            <button class="button"></button>
+            <p> more information </p>
+        </div>
 
-				<div class="text-of-copy">
-					viewmodel_offset_z -1.500000; viewmodel_presetpos 1; viewmodel_recoil 1.0;
-				</div>
+    </main>
+      <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="./index.html">Home</a></li>
+                <li class="list-inline-item"><a href="./Pages/News.html">News</a></li>
+                <li class="list-inline-item"><a href="./Pages/Concert.html">Concert</a></li>
+                <li class="list-inline-item"><a href="./Pages/Album.html">Album</a></li>
+                <li class="list-inline-item"><a href="./Pages/About_us.html">About us</a></li>
+            </ul>
+            <p class="copyright">Parchanti © 2022</p>
+        </footer>
+    </div>
+    <script>
+        var els = document.querySelectorAll("[class*= photos-preview]");
+        els[0].setAttribute("style", "display:block");
+        var index = 0;
+        function GetNext()
+        {
+            for (var i = 0; i < els.length; i++) {
+                els[i].setAttribute("style", "display:none");
+            }
+            index++;
+            if (index == els.length) {
+                index = 0;
+            }
+            els[index].setAttribute("style", "display:block");
+        }
 
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_hud_background_alpha 0.501711; cl_hud_bomb_under_radar 1; cl_hud_color 0; cl_hud_healthammo_style 1; cl_hud_playercount_pos 0; cl_hud_playercount_showcount 0; cl_hud_radar_scale 1.221230;
-				</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_radar_always_centered 0; cl_radar_icon_scale_min 1.25; cl_radar_rotate 1; cl_radar_scale 0.400000; cl_radar_square_with_scoreboard 0;
-				</div>
-		</div>
-
-		<div class="player" id="z1pls">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/47/47ef815ca742e0eb7619fc848989c7f9a8a7df45_full.jpg" />
-			</div>
-			<div class="text">
-				<p>z1pls</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-					<button onclick="download('z1pls')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('z1pls')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="z1pls-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
-
-				<div class="text-of-copy">
-					bind 0 "buy smokegrenade"; bind 1 "cl_righthand 1; slot1"; bind 2 "cl_righthand 1;slot2"; bind 3 "cl_righthand 0; slot3"; bind 9 "buy flashbang"; bind c "+jump;-attack;-attack2;-jump"; bind f "+lookatweapon"; bind i "r_drawothermodels 2";
-				</div>
-				<div class="text-of-copy">
-					bind k "slot12"; bind n "noclip"; bind o "sv_rethrow_last_grenade "; bind p "bot_place"; bind t "+spray_menu"; bind KP_MINUS "buy molotov; buy incendiarygrenade";
-				</div>
-				<div class="text-of-copy">
-					bind [ "mp_do_warmup_offine 1;mp_warmuptime_all_players_connected 9999;mp_warmuptime 9999;mp_warmup_start;mp_buy_anywhere 1;mp_maxmoney 999999;mp_startmoney 999999;mp_autoteambalance 0;mp_limitteams 20;mp_free_armor 1";
-				</div>
-				<div class="text-of-copy">
-					bind - "buy molotov; buy incendiarygrenade"; bind = "buy hegrenade"; bind SHIFT "+speed;r_cleardecals"; bind ALT "+voicerecord"; bind F3 "autobuy"; bind F4 "rebuy"; bind F5 "incrementvar voice_enable 0 1 1"; bind MOUSE1 "+attack;r_cleardecals";
-				</div>
-				<div class="text-of-copy">
-					bind MOUSE4 "use weapon_knife; use weapon_flashbang"; bind MWHEELUP "open_buymenu";
-				</div>
-
-
-			<div class="name-of-copy">
-				Crosshair commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_crosshair_drawoutline 1; cl_crosshair_dynamic_maxdist_splitratio 0.300000; cl_crosshair_dynamic_splitalpha_innermod 1.000000; cl_crosshair_dynamic_splitalpha_outermod 0.500000; cl_crosshair_dynamic_splitdist 7; cl_crosshair_friendly_warning 1;
-				</div>
-				<div class="text-of-copy">
-					cl_crosshair_outlinethickness 1.000000; cl_crosshair_sniper_show_normal_inaccuracy 0; cl_crosshair_sniper_width 1; cl_crosshair_t 0; cl_crosshairalpha 255; cl_crosshaircolor 4; cl_crosshaircolor_b 0; cl_crosshaircolor_g 0; cl_crosshaircolor_r 255;
-				</div>
-				<div class="text-of-copy">
-					cl_crosshairgap 0.000000; cl_crosshairgap_useweaponvalue 0; cl_crosshairsize 2.000000; cl_crosshairstyle 4; cl_crosshairthickness 1.000000;
-				</div>
-
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
-
-				<div class="text-of-copy">
-					net_graph 1; net_graphheight 0; net_graphholdsvframerate 0; net_graphipc 0; net_graphpos 2; net_graphproportionalfont 0; net_graphshowlatency 0; net_graphshowsvframerate 0;
-				</div>
-
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
-
-				<div class="text-of-copy">
-					viewmodel_fov 68; viewmodel_offset_x 2.5; viewmodel_offset_y 1.5; viewmodel_offset_z -2; viewmodel_presetpos 0; viewmodel_recoil 0;
-				</div>
-
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_hud_background_alpha 0.000000; cl_hud_bomb_under_radar 1; cl_hud_color 6; cl_hud_healthammo_style 0; cl_hud_playercount_pos 0; cl_hud_playercount_showcount 1; cl_hud_radar_scale 1.100000;
-				</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_radar_always_centered 0; cl_radar_icon_scale_min 0.400000; cl_radar_rotate 1; cl_radar_scale 0.400000; cl_radar_square_with_scoreboard 1;
-				</div>
-		</div>
-
-		<div class="player" id="Pe2Ya">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/0a/0acfbbe36e770d8e972e40be38cf4f09020edca6_full.jpg" />
-			</div>
-			<div class="text">
-				<p>Pe2Ya</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-
-					<button onclick="download('pe2ya')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('Pe2Ya')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="Pe2Ya-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
-
-				<div class="text-of-copy">
-					bind c "toggle voice_enable 1 0"; bind f "+lookatweapon"; bind h "commandmenu"; bind i "messagemode"; bind j "cheer"; bind k "toggle host_timescale 1 5"; bind l "onnect 217.11.249.84:27057"; bind n "noclip"; bind o "buyequip"; bind p "slot12";
-				</div>
-				<div class="text-of-copy">
-					bind t "+spray_menu"; bind v "+voicerecord"; bind x "toggle cl_crosshaircolor_g 255 50; toggle cl_crosshaircolor_r 50 255"; bind y "+jump; -attack; -attack2; -jump"; bind z "+jump; -attack; -attack2; -jump"; bind KP_5 "toggle host_timescale 1 5";
-				</div>
-				<div class="text-of-copy">
-					bind [ "invprev"; bind ] "invnext"; bind ' "+moveup"; bind , "buy primammo"; bind . "buy secammo"; bind / "+movedown"; bind \ "mp_restartgame 1"; bind - "sizedown"; bind = "sizeup"; bind CAPSLOCK "sv_rethrow_last_grenade "; bind INS "+klook";
-				</div>
-				<div class="text-of-copy">
-					bind DEL "toggle volume 0.3 0"; bind END "centerview"; bind PGUP "+lookup"; bind PGDN "+lookdown"; bind SHIFT "+speed;r_cleardecals"; bind ALT "player_ping"; bind UPARROW "+forward"; bind LEFTARROW "+left"; bind DOWNARROW "+back";
-				</div>
-				<div class="text-of-copy">
-					bind RIGHTARROW "+right"; bind F1 "give weapon_smokegrenade; give weapon_flashbang; give weapon_molotov; give weapon_hegrenade"; bind F2 "askconnect_accept"; bind F3 "autobuy"; bind F4 "rebuy"; bind F10 "disconnect"; bind F11 "kill";
-				</div>
-				<div class="text-of-copy">
-					bind MOUSE3 "toggle cl_crosshairgap -5 -2.5"; bind MOUSE4 "slot4"; bind MOUSE5 "+jump";
-				</div>
-
-			<div class="name-of-copy">
-				Crosshair commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_crosshair_drawoutline 0; cl_crosshair_dynamic_maxdist_splitratio 0.35; cl_crosshair_dynamic_splitalpha_innermod 1; cl_crosshair_dynamic_splitalpha_outermod 0.5; cl_crosshair_dynamic_splitdist 7; cl_crosshair_friendly_warning 1;
-				</div>
-				<div class="text-of-copy">
-					cl_crosshair_outlinethickness 1; cl_crosshair_sniper_show_normal_inaccuracy 0; cl_crosshair_sniper_width 1; cl_crosshair_t 0; cl_crosshairalpha 255.000000; cl_crosshaircolor 5; cl_crosshaircolor_b 0.000000; cl_crosshaircolor_g 50;
-				</div>
-				<div class="text-of-copy">
-					cl_crosshaircolor_r 255; cl_crosshairgap -5; cl_crosshairgap_useweaponvalue 0; cl_crosshairsize 0.8; cl_crosshairstyle 4; cl_crosshairthickness 0.100000;
-				</div>
-
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
-
-				<div class="text-of-copy">
-					net_graphheight 45; net_graphholdsvframerate 0; net_graphipc 0; net_graphmsecs 1000; net_graphproportionalfont 0.5; net_graphshowsvframerate 0;
-				</div>
-
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
-
-				<div class="text-of-copy">
-					viewmodel_presetpos 1; viewmodel_recoil 1.0;
-				</div>
-
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-
-				<div class="text-of-copy">
-					cl_hud_background_alpha 0.5; cl_hud_bomb_under_radar 1; cl_hud_color 0; cl_hud_healthammo_style 0; cl_hud_playercount_pos 0; cl_hud_playercount_showcount 0; cl_hud_radar_scale 1;
-				</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-
-				<div class="text-of-copy" id="a" onclick="copyDivToClipboard(a)">
-					cl_radar_always_centered 1; cl_radar_icon_scale_min 0.6; cl_radar_rotate 1; cl_radar_scale 0.7; cl_radar_square_with_scoreboard 1;
-				</div>
-		</div>
-
-		<div class="player" id="lesha13">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ca/ca20171e3da060aade4e0586ced3661b7fcc3336_full.jpg" />
-			</div>
-			<div class="text">
-				<p>lesha13</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-					<button onclick="download('lesh13')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('lesha13')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="lesha13-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
-			<div class="text-of-copy">
-				bind "0" "slot10";bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "4" "slot4";bind "5" "slot5";bind "6" "slot6";bind "7" "slot7";bind "8" "slot8";bind "9" "slot9";bind "a" "+moveleft";bind "b" "buymenu";bind "c" "toggle voice_enable 1 0";bind "d" "+moveright";bind "e" "+use";bind "f" "+lookatweapon";bind "i" "show_loadout_toggle";bind "m" "teammenu";bind "q" "lastinv";bind "r" "+reload";bind "s" "+back";bind "t" "noclip";bind "u" "messagemode2";bind "w" "+forward";bind "x" "+jump; -attack; -attack2; -jump";bind "y" "messagemode";bind "z" "+radialradio2";bind "`" "toggleconsole";bind "," "buyammo1";bind "." "buyammo2";bind "SPACE" "+jump";bind "TAB" "+showscores";bind "ESCAPE" "cancelselect";bind "DEL" "mute";bind "PAUSE" "pause";bind "SHIFT" "+speed;r_cleardecals";bind "CTRL" "+duck";bind "F3" "autobuy";bind "F4" "rebuy";bind "F5" "jpeg";bind "F6" "save quick";bind "F7" "load quick";bind "MOUSE1" "+attack";bind "MOUSE2" "+attack2";bind "MOUSE3" "player_ping";bind "MOUSE4" "drop";bind "MOUSE5" "+voicerecord";bind "MWHEELUP" "invprev";bind "MWHEELDOWN" "invnext";
-			</div>
-			<div class="name-of-copy">
-				Crosshair commands
-			</div>
-			<div class="text-of-copy">
-				cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0.000000";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.300000";cl_crosshair_dynamic_splitdist "5";cl_crosshair_friendly_warning "1";cl_crosshair_outlinethickness "1";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_sniper_width "1";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor "4";cl_crosshaircolor_b "0.000000";cl_crosshaircolor_g "0.000000";cl_crosshaircolor_r "255.000000";cl_crosshairdot "0";cl_crosshairgap "-2.183125";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "2.291741";cl_crosshairstyle "4";cl_crosshairthickness "0";cl_crosshairusealpha "1";
-			</div>
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
-			<div class="text-of-copy">
-				net_graph "1";net_graphheight "64";net_graphholdsvframerate "0";net_graphipc "0";net_graphmsecs "400";net_graphpos "1";net_graphproportionalfont "0";net_graphshowinterp "1";net_graphshowlatency "1";net_graphshowsvframerate "0";net_graphsolid "1";net_graphtext "1";
-			</div>
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
-			<div class="text-of-copy">
-				cl_viewmodel_shift_left_amt "1.5";cl_viewmodel_shift_right_amt "0.75";viewmodel_fov "60";viewmodel_offset_x "1";viewmodel_offset_y "1";viewmodel_offset_z "-1.500000";viewmodel_presetpos "1";viewmodel_recoil "1.0";
-			</div>
-
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-			<div class="text-of-copy">
-				cl_hud_background_alpha "0.501711";cl_hud_bomb_under_radar "1";cl_hud_color "0";cl_hud_healthammo_style "1";cl_hud_playercount_pos "0";cl_hud_playercount_showcount "0";cl_hud_radar_scale "1.221230";
-			</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-			<div class="text-of-copy">
-				cl_radar_always_centered "0";cl_radar_icon_scale_min "1.25";cl_radar_rotate "1";cl_radar_scale "0.400000";cl_radar_square_with_scoreboard "0";or "0";
-			</div>
-		</div>
-
-		<div class="player" id="Gunter">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/04/04825e15d7df9c199f027a6afb1a58fc10fdbb40_full.jpg" />
-			</div>
-			<div class="text">
-				<p>Gunter</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-					<button onclick="download('gunter')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('Gunter')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="Gunter-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
-			<div class="text-of-copy">
-				bind "0" "slot10";bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "4" "slot4";bind "5" "slot5";bind "6" "slot6";bind "7" "slot7";bind "8" "slot8";bind "9" "slot9";bind "a" "+moveleft";bind "b" "buymenu";bind "c" "toggle voice_enable 1 0";bind "d" "+moveright";bind "e" "+use";bind "f" "+lookatweapon";bind "i" "show_loadout_toggle";bind "m" "teammenu";bind "q" "lastinv";bind "r" "+reload";bind "s" "+back";bind "t" "noclip";bind "u" "messagemode2";bind "w" "+forward";bind "x" "+jump; -attack; -attack2; -jump";bind "y" "messagemode";bind "z" "+radialradio2";bind "`" "toggleconsole";bind "," "buyammo1";bind "." "buyammo2";bind "SPACE" "+jump";bind "TAB" "+showscores";bind "ESCAPE" "cancelselect";bind "DEL" "mute";bind "PAUSE" "pause";bind "SHIFT" "+speed;r_cleardecals";bind "CTRL" "+duck";bind "F3" "autobuy";bind "F4" "rebuy";bind "F5" "jpeg";bind "F6" "save quick";bind "F7" "load quick";bind "MOUSE1" "+attack";bind "MOUSE2" "+attack2";bind "MOUSE3" "player_ping";bind "MOUSE4" "drop";bind "MOUSE5" "+voicerecord";bind "MWHEELUP" "invprev";bind "MWHEELDOWN" "invnext";
-			</div>
-			<div class="name-of-copy">
-				Crosshair commands
-			</div>
-			<div class="text-of-copy">
-				cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0.000000";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.300000";cl_crosshair_dynamic_splitdist "5";cl_crosshair_friendly_warning "1";cl_crosshair_outlinethickness "1";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_sniper_width "1";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor "4";cl_crosshaircolor_b "0.000000";cl_crosshaircolor_g "0.000000";cl_crosshaircolor_r "255.000000";cl_crosshairdot "0";cl_crosshairgap "-2.183125";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "2.291741";cl_crosshairstyle "4";cl_crosshairthickness "0";cl_crosshairusealpha "1";
-			</div>
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
-			<div class="text-of-copy">
-				net_graph "1";net_graphheight "64";net_graphholdsvframerate "0";net_graphipc "0";net_graphmsecs "400";net_graphpos "1";net_graphproportionalfont "0";net_graphshowinterp "1";net_graphshowlatency "1";net_graphshowsvframerate "0";net_graphsolid "1";net_graphtext "1";
-			</div>
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
-			<div class="text-of-copy">
-				cl_viewmodel_shift_left_amt "1.5";cl_viewmodel_shift_right_amt "0.75";viewmodel_fov "60";viewmodel_offset_x "1";viewmodel_offset_y "1";viewmodel_offset_z "-1.500000";viewmodel_presetpos "1";viewmodel_recoil "1.0";
-			</div>
-
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-			<div class="text-of-copy">
-				cl_hud_background_alpha "0.501711";cl_hud_bomb_under_radar "1";cl_hud_color "0";cl_hud_healthammo_style "1";cl_hud_playercount_pos "0";cl_hud_playercount_showcount "0";cl_hud_radar_scale "1.221230";
-			</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-			<div class="text-of-copy">
-				cl_radar_always_centered "0";cl_radar_icon_scale_min "1.25";cl_radar_rotate "1";cl_radar_scale "0.400000";cl_radar_square_with_scoreboard "0";or "0";
-			</div>
-		</div>
-
-		<div class="player" id="POP">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/a0/a09b1ca0d4a1d6bbe7bac05461aa4c8ad159f418_full.jpg" />
-			</div>
-			<div class="text">
-				<p>POP</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-					<button onclick="download('pop')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('POP')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="POP-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
-			<div class="text-of-copy">
-				bind "0" "slot10";bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "4" "slot4";bind "5" "slot5";bind "6" "slot6";bind "7" "slot7";bind "8" "slot8";bind "9" "slot9";bind "a" "+moveleft";bind "b" "buymenu";bind "c" "toggle voice_enable 1 0";bind "d" "+moveright";bind "e" "+use";bind "f" "+lookatweapon";bind "i" "show_loadout_toggle";bind "m" "teammenu";bind "q" "lastinv";bind "r" "+reload";bind "s" "+back";bind "t" "noclip";bind "u" "messagemode2";bind "w" "+forward";bind "x" "+jump; -attack; -attack2; -jump";bind "y" "messagemode";bind "z" "+radialradio2";bind "`" "toggleconsole";bind "," "buyammo1";bind "." "buyammo2";bind "SPACE" "+jump";bind "TAB" "+showscores";bind "ESCAPE" "cancelselect";bind "DEL" "mute";bind "PAUSE" "pause";bind "SHIFT" "+speed;r_cleardecals";bind "CTRL" "+duck";bind "F3" "autobuy";bind "F4" "rebuy";bind "F5" "jpeg";bind "F6" "save quick";bind "F7" "load quick";bind "MOUSE1" "+attack";bind "MOUSE2" "+attack2";bind "MOUSE3" "player_ping";bind "MOUSE4" "drop";bind "MOUSE5" "+voicerecord";bind "MWHEELUP" "invprev";bind "MWHEELDOWN" "invnext";
-			</div>
-			<div class="name-of-copy">
-				Crosshair commands
-			</div>
-			<div class="text-of-copy">
-				cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0.000000";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.300000";cl_crosshair_dynamic_splitdist "5";cl_crosshair_friendly_warning "1";cl_crosshair_outlinethickness "1";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_sniper_width "1";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor "4";cl_crosshaircolor_b "0.000000";cl_crosshaircolor_g "0.000000";cl_crosshaircolor_r "255.000000";cl_crosshairdot "0";cl_crosshairgap "-2.183125";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "2.291741";cl_crosshairstyle "4";cl_crosshairthickness "0";cl_crosshairusealpha "1";
-			</div>
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
-			<div class="text-of-copy">
-				net_graph "1";net_graphheight "64";net_graphholdsvframerate "0";net_graphipc "0";net_graphmsecs "400";net_graphpos "1";net_graphproportionalfont "0";net_graphshowinterp "1";net_graphshowlatency "1";net_graphshowsvframerate "0";net_graphsolid "1";net_graphtext "1";
-			</div>
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
-			<div class="text-of-copy">
-				cl_viewmodel_shift_left_amt "1.5";cl_viewmodel_shift_right_amt "0.75";viewmodel_fov "60";viewmodel_offset_x "1";viewmodel_offset_y "1";viewmodel_offset_z "-1.500000";viewmodel_presetpos "1";viewmodel_recoil "1.0";
-			</div>
-
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-			<div class="text-of-copy">
-				cl_hud_background_alpha "0.501711";cl_hud_bomb_under_radar "1";cl_hud_color "0";cl_hud_healthammo_style "1";cl_hud_playercount_pos "0";cl_hud_playercount_showcount "0";cl_hud_radar_scale "1.221230";
-			</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-			<div class="text-of-copy">
-				cl_radar_always_centered "0";cl_radar_icon_scale_min "1.25";cl_radar_rotate "1";cl_radar_scale "0.400000";cl_radar_square_with_scoreboard "0";or "0";
-			</div>
-		</div>
-
-		<div class="player" id="Panda">
-			<div class="img-container">
-				<img src="https://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/da/dafa43ab87a3fdd242749b9e87a3ca8a0d4978ab_full.jpg" />
-			</div>
-			<div class="text">
-				<p>Panda</p>
-			</div>
-			<div class="buttons">
-				<label class="download">
-					download
-					<button onclick="download('panda')"></button>
-				</label>
-				<label class="copy">
-					copy
-					<button onclick="toggleHidden('Panda')"></button>
-				</label>
-			</div>
-		</div>
-		<div id="Panda-id" class="copys">
-			<div class="name-of-copy">
-				Bind commands
-			</div>
-			<div class="text-of-copy">
-				bind "0" "slot10";bind "1" "slot1";bind "2" "slot2";bind "3" "slot3";bind "4" "slot4";bind "5" "slot5";bind "6" "slot6";bind "7" "slot7";bind "8" "slot8";bind "9" "slot9";bind "a" "+moveleft";bind "b" "buymenu";bind "c" "toggle voice_enable 1 0";bind "d" "+moveright";bind "e" "+use";bind "f" "+lookatweapon";bind "i" "show_loadout_toggle";bind "m" "teammenu";bind "q" "lastinv";bind "r" "+reload";bind "s" "+back";bind "t" "noclip";bind "u" "messagemode2";bind "w" "+forward";bind "x" "+jump; -attack; -attack2; -jump";bind "y" "messagemode";bind "z" "+radialradio2";bind "`" "toggleconsole";bind "," "buyammo1";bind "." "buyammo2";bind "SPACE" "+jump";bind "TAB" "+showscores";bind "ESCAPE" "cancelselect";bind "DEL" "mute";bind "PAUSE" "pause";bind "SHIFT" "+speed;r_cleardecals";bind "CTRL" "+duck";bind "F3" "autobuy";bind "F4" "rebuy";bind "F5" "jpeg";bind "F6" "save quick";bind "F7" "load quick";bind "MOUSE1" "+attack";bind "MOUSE2" "+attack2";bind "MOUSE3" "player_ping";bind "MOUSE4" "drop";bind "MOUSE5" "+voicerecord";bind "MWHEELUP" "invprev";bind "MWHEELDOWN" "invnext";
-			</div>
-			<div class="name-of-copy">
-				Crosshair commands
-			</div>
-			<div class="text-of-copy">
-				cl_crosshair_drawoutline "0";cl_crosshair_dynamic_maxdist_splitratio "0.000000";cl_crosshair_dynamic_splitalpha_innermod "1";cl_crosshair_dynamic_splitalpha_outermod "0.300000";cl_crosshair_dynamic_splitdist "5";cl_crosshair_friendly_warning "1";cl_crosshair_outlinethickness "1";cl_crosshair_sniper_show_normal_inaccuracy "0";cl_crosshair_sniper_width "1";cl_crosshair_t "0";cl_crosshairalpha "255";cl_crosshaircolor "4";cl_crosshaircolor_b "0.000000";cl_crosshaircolor_g "0.000000";cl_crosshaircolor_r "255.000000";cl_crosshairdot "0";cl_crosshairgap "-2.183125";cl_crosshairgap_useweaponvalue "0";cl_crosshairsize "2.291741";cl_crosshairstyle "4";cl_crosshairthickness "0";cl_crosshairusealpha "1";
-			</div>
-			<div class="name-of-copy">
-				Netgraph commands
-			</div>
-			<div class="text-of-copy">
-				net_graph "1";net_graphheight "64";net_graphholdsvframerate "0";net_graphipc "0";net_graphmsecs "400";net_graphpos "1";net_graphproportionalfont "0";net_graphshowinterp "1";net_graphshowlatency "1";net_graphshowsvframerate "0";net_graphsolid "1";net_graphtext "1";
-			</div>
-			<div class="name-of-copy">
-				Modelview commands
-			</div>
-			<div class="text-of-copy">
-				cl_viewmodel_shift_left_amt "1.5";cl_viewmodel_shift_right_amt "0.75";viewmodel_fov "60";viewmodel_offset_x "1";viewmodel_offset_y "1";viewmodel_offset_z "-1.500000";viewmodel_presetpos "1";viewmodel_recoil "1.0";
-			</div>
-
-			<div class="name-of-copy">
-				Hud commands
-			</div>
-			<div class="text-of-copy">
-				cl_hud_background_alpha "0.501711";cl_hud_bomb_under_radar "1";cl_hud_color "0";cl_hud_healthammo_style "1";cl_hud_playercount_pos "0";cl_hud_playercount_showcount "0";cl_hud_radar_scale "1.221230";
-			</div>
-
-			<div class="name-of-copy">
-				Radar commands
-			</div>
-			<div class="text-of-copy">
-				cl_radar_always_centered "0";cl_radar_icon_scale_min "1.25";cl_radar_rotate "1";cl_radar_scale "0.400000";cl_radar_square_with_scoreboard "0";or "0";
-			</div>
-		</div>
-
-		<iframe id="invisible" style="display:none;"></iframe>
-
-		<script>
-
-			function download(name) {
-				var iframe = document.getElementById('invisible');
-				iframe.src = "./Configs/" + name + ".cfg";
-			}
-
-			/*
-            function copyDivToClipboard(id) {
-                var range = document.createRange();
-                range.selectNode(document.getElementById(id));
-                window.getSelection().removeAllRanges();
-                window.getSelection().addRange(range); 
-                document.execCommand("copy");
-				window.getSelection().removeAllRanges();
-				console.log("a");
-			}
-			*/
-			
-			var a = 0;
-			function toggleHidden(name) {
-				var els = document.querySelectorAll("[class*= player]");
-				var n = document.getElementById(name);
-				var info = document.getElementById(name + "-id");
-				var el = document.querySelectorAll('copys');
-				if (a == 0) {
-					for (var i = 0; i < els.length; i++) {
-						els[i].setAttribute("style", "display:none");
-
-					}
-
-					for (var i = 0; i < el.length; i++) {
-						el[i].setAttribute("style", "opacity: 0;");
-					}
-					info.classList.toggle('active');
-
-					n.style.display = "block";
-					n.setAttribute("style", "margin-left:4%;margin-right:60%");
-					document.getElementById("container").setAttribute("style", "margin:0");
-					a++;
-				}
-				else {
-					for (var i = 0; i < els.length; i++) {
-						els[i].setAttribute("style", "display:block");
-					}
-
-					for (var i = 0; i < el.length; i++) {
-						el[i].setAttribute("style", "opacity: 1;");
-					}
-					info.classList.toggle('active');
-
-
-					n.style.display = "block";
-					n.setAttribute("style", "margin:0");
-					document.getElementById("container").setAttribute("style", "margin:8em;margin-top: 3em;");
-					document.getElementById("header").setAttribute("style", "display:block;");
-					a--;
-				}
-
-			}
-
-		</script>
-	</div>
+        function GetPrev() {
+            for (var i = 0; i < els.length; i++) {
+                els[i].setAttribute("style", "display:none");
+            }
+            index--;
+            if (index < 0) {
+                index = els.length - 1;
+            }
+            els[index].setAttribute("style", "display:block");
+        }
+    </script>
 </body>
 </html>
