@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+/*@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+*/
+:root
+{
+    --btn-container-color: #eeeeee;
+    --body-color: #ffffff;
+    --btn-active: #4d13d1;
+    --btn-active-text: #ffffff;
+}
+
+body{
+    overflow: hidden;
+}
+main
+{
+    width: inherit;
+}
+
+main .page
+{
+    background-color: var(--body-color);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+}
+
+main :is(.constructor, .preview)
+{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    transition: left .4s linear;
+}
+
+main .constructor
+{
+    flex-flow: row-reverse;
+}
+
+main .page.constructor
+{
+    left: 100%;
+}
+
+main .preview
+{
+    left: -100%;
+}
+
+main .default
+{
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+
+    main .default{
+        flex-flow: column-reverse;
+    }
+
+    .page.default .btn-container ion-icon
+    {
+        transform: scale(4) ;
+    }
+  }
+
+.page .btn-container
+{
+    background-color: var(--btn-container-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .325s ease;
+    justify-content: center;
+    width: 2em;
+    height: 100hv;
+}
+
+.page.default .btn-container
+{
+    width: 15em;
+    aspect-ratio: 1;
+    border-radius: 99vw;
+}
+
+.page .btn-container:hover
+{
+    transform: scale(1.2);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.page .btn-container ion-icon
+{
+    transform: scale(2);
+}
+
+.page.default .btn-container ion-icon
+{
+    transform: scale(6);
+}
+
+.page.constructor .btn-container ion-icon
+{
+    transform: rotate(180deg) scale(2);
+}
+
+main :is(.constructor.active, .preview.active) {
+    left: 0;
+}
+
+.content
+{
+    flex:1;
+    overflow-y: auto;
+    display: flex;
+}
+
+.preview .content
+{
+    padding: 3em 2em;
+}
+
+h1, label
+{
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    margin: 0 auto;
+    width: fit-content;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.preview .content h1
+{
+    margin-bottom: 2em;
+}
+
+.constructor .menu
+{
+    background-color: var(--btn-container-color);
+    flex: 2;
+    min-width: 17.5em;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-flow: column;
+    /* justify-content: center; */
+    gap: 5em;
+    padding: 3em 1em;
+}
+
+.constructor .menu > *{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.constructor .menu label{
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 0em;
+}
+.menu .section input[type="text"]{
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    padding: .2em;
+    margin-bottom: 1em;
+}
+
+.menu .section input[type="text"]:focus{
+    outline: none;
+}
+
+.menu .section .setter
+{
+    display: flex;
+    flex-flow: row-reverse;
+    gap: 1em;
+    justify-content: space-between;
+    margin: .75em 0 2em 0;
+    padding: 0 .5em;
+    display: none;
+}
+
+.content .btn-container
+{
+    background: var(--body-color);
+    transition: .25s;
+}
+.content .btn-container:hover
+{
+    transform: scale(1.075);
+    box-shadow: none;
+}
+
+.section .setter .btn-container
+{
+    flex: 1;
+    height: 1.6em;
+    border-radius: 3px;
+}
+
+.section.add{
+    display: flex;
+    flex-flow: column;
+    gap: 2em;
+}
+.section .btn-container.edit
+{
+    padding: .5em 1.5em;
+    width: 12em;
+    gap: 2em;
+    border-radius: 99vw;
+}
+
+.section .btn-container.edit.active{
+    background-color: var(--btn-active);
+    color: var(--btn-active-text);
+}
+.content .editor{
+    overflow: auto; 
+    flex: 8;
+}
+
+.editor > *
+{
+    margin: 2em auto;
+}
+.editor .btn-container.add 
+{
+    width: 10em;
+    aspect-ratio: 1;
+    border-style: dashed;
+    border-radius: 5px;
+}
+.menu .section.set{
+    transform: translate(0, -250px);
+    transition: all .325s ease-in;
+}
+.menu .section.set.active
+{
+    transform: translate(0, 0);
+}
+
+.editor #el-container{
+    width: inherit;
+    height: auto;
+    padding: 1.5em;
+    display: flex;
+    flex-flow: column;
+    gap: 2em;
+}
+
+.auto-fill{
+    margin: 0 auto;
+    width: fit-content;
+    display: grid;
+    gap: .3em;
+}
+
+.element
+{
+    width: 1.4em;
+    aspect-ratio: 1;
+    border-radius: 2px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.element.empty
+{
+    background-color: transparent;
+}
+
+.element.premium
+{
+    background-color: lightcoral;
+}
+
+.element.premium-plus
+{
+    background-color: lightskyblue;
+}
+
+.section .btn-container.edit ion-icon
+{
+    transform: rotate(0deg) scale(1.5);
+    
+}

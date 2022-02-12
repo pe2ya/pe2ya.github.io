@@ -1,140 +1,110 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./Layout/Styles/style.css">
+        <title>Constuctor</title>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./Layout/Style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-    <title></title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="./index.html">
-                <div class="img-container"><img src="Images/logo.png"></div>
-                Parchanti
-            </a>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="./Pages/News.html">NEWS</a></li>
-                <li><a href="./Pages/Concert.html">CONCERT</a></li>
-                <li><a href="./Pages/Album.html">ALBUMS</a></li>
-                <li><a href="./Pages/About_us.html">ABOUT US</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="photos">
-            <label class="buttons">
-                <div class="arrow-container">
-                    <img class="original" src="Images/left-arrow.png">
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </head>
+    <body>
+        <main>
+            <div class="page default">
+                <div class="btn-container nb">
+                    <ion-icon name="list-circle-outline"></ion-icon>
                 </div>
-                <button class="button" onclick="GetPrev()"></button>
-            </label>
-            <div class="photos-container">
-                <img class="photos-preview" src="Images/preview_photo1.jpg">
-                <img class="photos-preview" src="Images/preview_photo2.jpg">
-                <img class="photos-preview" src="Images/preview_photo3.jpg">
+                <div class="btn-container nb">
+                    <ion-icon name="add-circle-outline"></ion-icon>
+                </div>
             </div>
-            <label class="buttons">
-                <div class="arrow-container">
-                    <img class="original" src="Images/right-arrow.png">
+
+            <div class="page preview">
+                <div class="btn-container nb">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
                 </div>
-                <button class="button" onclick="GetNext()"></button>
-            </label>
-        </div>
 
-        <h2> NEWS</h2>
+                <div class="content">
+                        <h1>Yours template</h1>
+                </div>
+            </div>
 
-        <div class="text">
-            <h4>New Albun realese</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut lorem eget odio molestie efficitur quis et ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus in luctus elit. In facilisis et urna sit amet imperdiet. Donec dignissim eu dui eget elementum. Praesent aliquam lectus.</p>
-            <h4>Concert tour 2022</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum, eros quis ultricies porta, risus sapien malesuada lacus, sed tincidunt metus sapien non neque. Etiam in nisi massa. Nullam bibendum imperdiet odio in commodo. Ut convallis dolor euismod tellus finibus egestas. Cras non arcu nec dui pretium pellentesque. Suspendisse euismod.</p>
-        </div>
+            <div class="page constructor">
+                <div class="btn-container nb">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </div>
 
-        <div class="btn-more-info">
-            <button class="button"></button>
-            <p> more information </p>
-        </div>
+                <div class="content">
+                    <div class="menu">
+                        <div class="section set" id="set">
+                            <form action="">
+                                <label class="width">
+                                    Set width
+                                    <input type="text" autocomplete="off">
+                                </label>
+                                <div class="setter">
+                                    <div class="btn-container">
+                                        <ion-icon name="add-outline"></ion-icon>
+                                    </div>
+                                    
+                                    <div class="btn-container">
+                                        <ion-icon name="remove-outline"></ion-icon>
+                                    </div>
+                                </div>
 
-        <h2>CONCERT TOUR 2022</h2>
+                                <label class="height">
+                                    Set height
+                                    <input type="text" autocomplete="off">
+                                </label>
+                                <div class="setter">
+                                    <div class="btn-container">
+                                        <ion-icon name="add-outline"></ion-icon>
+                                    </div>
+                                    
+                                    <div class="btn-container">
+                                        <ion-icon name="remove-outline"></ion-icon>
+                                    </div>
+                                </div>
+                                <div class="btn-container edit" id="create-container">
+                                   Create
+                                </div>
+                            </form>
+                        </div>
+                        <div class="section add">
+                            <div class="btn-container edit" id="add-empty">
+                                Add empty
+                            </div>
+                            <div class="btn-container edit" id="add-premium">
+                                Add premium
+                            </div>
+                            <div class="btn-container edit" id="add-premium-plus">
+                                Add premium+
+                            </div>
+                            <div class="btn-container edit" id="edit-section">
+                                Edit section
+                            </div>
+                        </div>
+                        <div class="section create">
+                            <div class="btn-container edit" id="create">
+                                Create
+                                <ion-icon name="construct-outline"></ion-icon>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="info-table">
-            <table>
-                <tr>
-                    <th>Town</th>
-                    <th>Date</th>
-                </tr>
-                <tr>
-                    <td>Anchorage</td>
-                    <td>4.3.2021</td>
-                </tr>
-                <tr>
-                    <td>Fiarbanks</td>
-                    <td>14.3.2021</td>
-                </tr>
-                <tr>
-                    <td>Kenai</td>
-                    <td>24.3.2021</td>
-                </tr>
-                <tr>
-                    <td>Ketchinkan</td>
-                    <td>7.4.2021</td>
-                </tr>
-                <tr>
-                    <td>Kotzebue</td>
-                    <td>17.4.2021</td>
-                </tr>
-            </table>
-        </div>
+                    <div class="editor">
+                        <div id="el-container">
+                        </div>
 
-        <div class="btn-more-info">
-            <button class="button"></button>
-            <p> more information </p>
-        </div>
-
-    </main>
-      <div class="footer-basic">
-        <footer>
-            <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="./index.html">Home</a></li>
-                <li class="list-inline-item"><a href="./Pages/News.html">News</a></li>
-                <li class="list-inline-item"><a href="./Pages/Concert.html">Concert</a></li>
-                <li class="list-inline-item"><a href="./Pages/Album.html">Album</a></li>
-                <li class="list-inline-item"><a href="./Pages/About_us.html">About us</a></li>
-            </ul>
-            <p class="copyright">Parchanti © 2022</p>
-        </footer>
-    </div>
-    <script>
-        var els = document.querySelectorAll("[class*= photos-preview]");
-        els[0].setAttribute("style", "display:block");
-        var index = 0;
-        function GetNext()
-        {
-            for (var i = 0; i < els.length; i++) {
-                els[i].setAttribute("style", "display:none");
-            }
-            index++;
-            if (index == els.length) {
-                index = 0;
-            }
-            els[index].setAttribute("style", "display:block");
-        }
-
-        function GetPrev() {
-            for (var i = 0; i < els.length; i++) {
-                els[i].setAttribute("style", "display:none");
-            }
-            index--;
-            if (index < 0) {
-                index = els.length - 1;
-            }
-            els[index].setAttribute("style", "display:block");
-        }
-    </script>
-</body>
+                        <div class="btn-container add" id="add">
+                            <ion-icon name="add-outline"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+    <script src="./Layout/Scripts/script.js"></script>
+    </body>
 </html>
