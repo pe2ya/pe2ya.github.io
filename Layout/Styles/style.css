@@ -346,6 +346,12 @@ h1, label
 .element.empty
 {
     background-color: transparent;
+    cursor: auto;
+}
+
+#el-container .element.empty
+{
+    cursor: pointer;
 }
 
 .element.premium
@@ -362,4 +368,15 @@ h1, label
 {
     transform: rotate(0deg) scale(1.5);
     
+}
+
+.page.preview .content
+{
+    flex-flow: column;
+}
+
+#template{
+    flex-flow: column;
+    gap: 2em;
+    overflow: auto;
 }

@@ -87,6 +87,8 @@ var EditBtn = document.querySelector("#edit-section");
 var btns = [emptyBtn, premiumBtn, premiumPlusBtn, EditBtn];
 
 function EditMode(name) {
+
+
     var els = document.querySelectorAll(".element");
     for(i = 0; i < els.length; i++)
     {
@@ -110,7 +112,7 @@ function SwitchBtn(btn)
         }
         else
         {
-            el.classList.toggle("active");
+            el.classList.add("active");
         }
     })
 }
@@ -118,8 +120,6 @@ emptyBtn.onclick = function() { EditMode("empty"); SwitchBtn(emptyBtn); }
 premiumBtn.onclick = function() { EditMode("premium"); SwitchBtn(premiumBtn); }
 premiumPlusBtn.onclick = function() { EditMode("premium-plus"); SwitchBtn(premiumPlusBtn); }
 EditBtn.onclick = function() { alert("Coming soon"); }
-
-let sectionNumber = 1;
 
 function Template(name, template) {
     this.name = name;
@@ -136,7 +136,6 @@ createBtn.onclick = function() {
     var sectionArray = [];
     editor.querySelectorAll(".auto-fill").forEach((el) =>
     {
-        var array = [];
         var section = [];
         var elComStyle = window.getComputedStyle(el);
         let numberOfElement = elComStyle.getPropertyValue("grid-template-columns").split(" ").length;
@@ -158,14 +157,64 @@ createBtn.onclick = function() {
                     break;
             }
         })
-        array.push(section);
-        var newSection = new Section(array, numberOfElement);
+        var newSection = new Section(section, numberOfElement);
         sectionArray.push(newSection);
     })
-    var template = new Template("Template" + sectionNumber, sectionArray);
+    var template = new Template("Template", sectionArray);
     console.log(template);
-    sectionNumber++;
 
     editor.innerHTML = "";
     constructor.classList.remove("active");
+
+    ShowTemplate(template, "template");
+}
+
+var container = document.createElement("div");
+container.className = "auto-fill";
+
+var element = document.createElement("div");
+element.className = "element"
+
+function AppendELement(cont) {
+    var el = element.cloneNode(true);
+    cont.appendChild(el);
+}
+function AppendELementWithCLassName(cont, name) {
+    var el = element.cloneNode(true);
+    el.classList.add(name);
+    cont.appendChild(el);
+}
+
+function ShowTemplate(obj, id) {
+    var name = obj.name;
+    var area = document.querySelector("#" + id);
+    area.innerHTML = "";
+    var sectionArray = obj.template;
+
+    sectionArray.forEach((s) =>{
+        var autoFill = container.cloneNode(true);
+
+        s.section.forEach((el) =>{
+            switch(el){
+                case 0:
+                    AppendELement(autoFill);
+                    break;
+                case -1:
+                    AppendELementWithCLassName(autoFill, "empty");
+                    break;
+                case 1:
+                    AppendELementWithCLassName(autoFill, "premium");
+                    break;
+                case 2:
+                    AppendELementWithCLassName(autoFill, "premium-plus");
+                    break;
+                case 10:
+                    AppendELementWithCLassName(autoFill, "reserved");
+                    break;
+            }
+        });
+
+        autoFill.setAttribute("style", "grid-template-columns: repeat(" + s.columnN + ", auto)");
+        area.appendChild(autoFill);
+    });
 }
