@@ -46,6 +46,23 @@ function GetInput(input, limit, name){
         return 0;
     }
 }
+
+var container = document.createElement("div");
+container.className = "auto-fill";
+
+var element = document.createElement("div");
+element.className = "element"
+
+function AppendELement(cont) {
+    var el = element.cloneNode(true);
+    cont.appendChild(el);
+}
+function AppendELementWithCLassName(cont, name) {
+    var el = element.cloneNode(true);
+    el.classList.add(name);
+    cont.appendChild(el);
+}
+
 var editor = document.querySelector("#el-container");
 containerBtn.onclick = function() {
     let numberOfColumns = GetInput(inputHeight, 75, "Width");
@@ -53,25 +70,18 @@ containerBtn.onclick = function() {
 
     if(numberOfElements != 0 || numberOfColumns != 0)
     {
-        var container = document.createElement("div");
-        container.className = "auto-fill";
-    
-        var element = document.createElement('div');
-        element.className = "element";
+        var autoFill = container.cloneNode(true);
     
         for(i = 0; i < numberOfColumns; i++)
         {
            for(var j = 0; j < numberOfElements; j++)
            {
-                var element = document.createElement('div');
-                element.className = "element";
-    
-                container.appendChild(element);
+                AppendELement(autoFill);
            } 
         }
     
-        container.setAttribute("style", "grid-template-columns: repeat(" + numberOfElements + ", auto)");
-        editor.appendChild(container);
+        autoFill.setAttribute("style", "grid-template-columns: repeat(" + numberOfElements + ", auto)");
+        editor.appendChild(autoFill);
     
         setterbuttons.classList.remove("active");
         inputWidth.value = "";
@@ -133,7 +143,7 @@ function Template(name, template) {
   
 var createBtn = document.querySelector("#create");
 createBtn.onclick = function() {
-    var sectionArray = [];
+    var json = '{"name":"Template","template":[';
     editor.querySelectorAll(".auto-fill").forEach((el) =>
     {
         var section = [];
@@ -158,9 +168,13 @@ createBtn.onclick = function() {
             }
         })
         var newSection = new Section(section, numberOfElement);
-        sectionArray.push(newSection);
+
+        var JsonString = JSON.stringify(newSection);
+        json += JsonString + ",";
+
     })
-    var template = new Template("Template", sectionArray);
+    json = json.slice(0, -1) + ']}';
+    var template = JsonToObj(json);
     console.log(template);
 
     editor.innerHTML = "";
@@ -169,20 +183,17 @@ createBtn.onclick = function() {
     ShowTemplate(template, "template");
 }
 
-var container = document.createElement("div");
-container.className = "auto-fill";
 
-var element = document.createElement("div");
-element.className = "element"
+function JsonToObj(json){
+    var obj = JSON.parse(json);
+    var sectionArray = [];
+    obj.template.forEach((s) =>{
+        var section = new Section(s.section, s.columnN);
+        sectionArray.push(section);
+    });
 
-function AppendELement(cont) {
-    var el = element.cloneNode(true);
-    cont.appendChild(el);
-}
-function AppendELementWithCLassName(cont, name) {
-    var el = element.cloneNode(true);
-    el.classList.add(name);
-    cont.appendChild(el);
+    var result = new Template(obj.name, sectionArray);
+    return result;
 }
 
 function ShowTemplate(obj, id) {
