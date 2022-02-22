@@ -8,17 +8,35 @@ for(i = 0; i < btnContainers.length; i++)
     btnContainers[i].onclick = function() {
         if(this === btnContainers[0] || this == btnContainers[2]){
             preview.classList.toggle("active");
+
+            GetPagePosition(preview.className.includes("active"), -1);
         }
         else {
             constructor.classList.toggle("active");
+
+           GetPagePosition(constructor.className.includes("active"), 1);
         }
+    }
+}
+
+function GetPagePosition(bool, num)
+{
+    if(bool)
+    {
+        localStorage.page = num;
+    }
+    else
+    {
+        localStorage.page = 0;
     }
 }
 
 var addbutton  = document.querySelector("#add");
 var setterbuttons = document.querySelector("#set");
+var title = document.querySelector("#constructor-title");
 addbutton.onclick = function() {
     setterbuttons.classList.toggle("active");
+    title.classList.toggle("active");
 }
 
 var containerBtn = document.querySelector("#create-container");
@@ -86,6 +104,8 @@ containerBtn.onclick = function() {
         setterbuttons.classList.remove("active");
         inputWidth.value = "";
         inputHeight.value = "";
+
+        localStorage.backup = editor.innerHTML;
     }
 }
 
@@ -108,6 +128,8 @@ function EditMode(name) {
                 this.className = "element";
             }
             this.classList.toggle(name);
+
+            localStorage.backup = editor.innerHTML;
         }
     }
 }
@@ -143,7 +165,7 @@ function Template(name, template) {
   
 var createBtn = document.querySelector("#create");
 createBtn.onclick = function() {
-    var json = '{"name":"Template","template":[';
+    var sectionArray = [];
     editor.querySelectorAll(".auto-fill").forEach((el) =>
     {
         var section = [];
@@ -168,14 +190,14 @@ createBtn.onclick = function() {
             }
         })
         var newSection = new Section(section, numberOfElement);
-
-        var JsonString = JSON.stringify(newSection);
-        json += JsonString + ",";
+        sectionArray.push(newSection);
 
     })
-    json = json.slice(0, -1) + ']}';
-    var template = JsonToObj(json);
+    var template = new Template("Template", sectionArray);
     console.log(template);
+
+    localStorage.template = JSON.stringify(template);
+    localStorage.backup = "";
 
     editor.innerHTML = "";
     constructor.classList.remove("active");
@@ -183,6 +205,21 @@ createBtn.onclick = function() {
     ShowTemplate(template, "template");
 }
 
+// useless function
+function ObjToJson(obj) {
+    var pattern = '"template":[';
+    var sections = obj.template;
+    obj.template = [];
+    var split = JSON.stringify(obj).split(pattern);
+    var firstPart = split[0] + pattern;
+    var secontPart = split[1];
+    sections.forEach((s) => {
+        var JsonString = JSON.stringify(s);
+        firstPart += JsonString + ",";
+    });
+    result = firstPart.slice(0, -1) + secontPart;
+    return result;
+}
 
 function JsonToObj(json){
     var obj = JSON.parse(json);
@@ -228,4 +265,23 @@ function ShowTemplate(obj, id) {
         autoFill.setAttribute("style", "grid-template-columns: repeat(" + s.columnN + ", auto)");
         area.appendChild(autoFill);
     });
+}
+
+if(localStorage.template) {
+    ShowTemplate(JsonToObj(localStorage.template), "template");
+}
+
+if(localStorage.backup) {
+    editor.innerHTML = localStorage.backup;
+}
+
+if(localStorage.page) {
+    switch(parseInt(localStorage.page)) {
+        case -1: 
+            preview.classList.add("active");
+            break;
+        case 1:
+            constructor.classList.add("active");
+            break;
+    }
 }
