@@ -477,6 +477,7 @@ width: 100%;
     opacity: 1;
     transition: all .325s ease-in;
     transition-delay: .2s;
+    z-index: -1;
 }
 
 .section.set .constructor-title.active {
