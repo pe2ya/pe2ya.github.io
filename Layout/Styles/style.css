@@ -83,6 +83,11 @@ select {
     --nav-size: 6em;
     --nav-text-color: black;
     --nav-text-color-hover: grey;
+    --scroll-bar-color: #888;
+    --scroll-bar-color-hover: #555;
+    --form-cansel-color: #afafaf;
+    --form-cansel-color-hover: #5f5f5f;
+    --form-comfirm-color: #187ff5;
 }
 
 body{
@@ -99,7 +104,6 @@ main .page
     width: 100vw;
     height: 100vh;
     display: flex;
-
 }
 
 main :is(.constructor, .preview)
@@ -206,7 +210,7 @@ main :is(.constructor.active, .preview.active) {
     padding: 3em 2em;
 }
 
-h1, label, a, li
+h1, label, a, li, button, input
 {
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
@@ -431,6 +435,7 @@ nav {
 
 .nav-links {
     list-style: none;
+    padding: 0;
 }
 
 .nav-links li {
@@ -463,6 +468,24 @@ nav {
 width: 100%;
 }
 
+.user {
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 99vw;
+    transition: .325s;
+    margin-left: 2em;
+}
+.user ion-icon{
+    transform: scale(1.5);
+}
+.user:hover {
+    background-color: #CCCCCC;
+}
+
 .section.set .constructor-title
 {
     width: 100%;
@@ -484,4 +507,120 @@ width: 100%;
     top: 0;
     opacity: 0;
     transition-delay: 0s;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-bar-color); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll-bar-color-hover); 
+}
+
+.form-window {
+    display: none; 
+    position: fixed; 
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.form-window::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.form-window.active {
+    display: block;
+}
+
+.form-window h1
+{
+    margin: 2em auto;
+}
+.form-window .form-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; 
+    border: 1px solid #888;
+    width: 80%; 
+    border-radius: 6px;
+    animation: animatezoom 0.6s
+}
+
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
+
+
+.form-window .container {
+    padding: 1em;
+}
+
+.form-window input[type=text], input[type=password], button {
+    width: 100%;
+    padding: .75em 1.25em;
+    margin: .5em 0;
+    border-radius: 4px;
+}
+
+.form-window input[type=text], input[type=password] {
+    display: inline-block;
+    border: 1px solid #ccc;
+}
+
+/*For future*/
+.form-window button {
+    background-color: #04AA6D;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all .325s;
+}
+
+.form-window button:hover {
+    opacity: 0.8;
+}
+
+.form-window .container:nth-last-child(1) {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.form-window .container:nth-last-child(1) button {
+    width: 10em;
+    padding: .8em 1em;
+    background-color: var(--form-comfirm-color);
+    font-weight: 500;
+    font-size: 1.1em;
+}
+
+.form-window .container:nth-last-child(1) .cancel {
+    background-color: transparent;
+    border: 2px solid var(--form-cansel-color);
+    color: var(--form-cansel-color);
+}
+
+.form-window .container:nth-last-child(1) .cancel:hover {
+    border-color: var(--form-cansel-color-hover);
+    color: var(--form-cansel-color-hover);
+}
+
+.form-window label {
+    font-size: 1.25em;
 }

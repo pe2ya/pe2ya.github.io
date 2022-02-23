@@ -71,17 +71,24 @@ container.className = "auto-fill";
 var element = document.createElement("div");
 element.className = "element"
 
-function AppendELement(cont) {
+function AppendELement(cont, num) {
     var el = element.cloneNode(true);
+    if(num != 0){
+        el.innerHTML = num;
+    }
     cont.appendChild(el);
 }
-function AppendELementWithCLassName(cont, name) {
+function AppendELementWithCLassName(cont, name, num) {
     var el = element.cloneNode(true);
+    if(num != 0){
+        el.innerHTML = num;
+    }
     el.classList.add(name);
     cont.appendChild(el);
 }
 
 var editor = document.querySelector("#el-container");
+editor.innerHTML = "";
 containerBtn.onclick = function() {
     let numberOfColumns = GetInput(inputHeight, 75, "Width");
     let numberOfElements = GetInput(inputWidth, 75, "Height");
@@ -94,7 +101,7 @@ containerBtn.onclick = function() {
         {
            for(var j = 0; j < numberOfElements; j++)
            {
-                AppendELement(autoFill);
+                AppendELement(autoFill, 0);
            } 
         }
     
@@ -102,6 +109,7 @@ containerBtn.onclick = function() {
         editor.appendChild(autoFill);
     
         setterbuttons.classList.remove("active");
+        title.classList.remove("active");
         inputWidth.value = "";
         inputHeight.value = "";
 
@@ -165,44 +173,13 @@ function Template(name, template) {
   
 var createBtn = document.querySelector("#create");
 createBtn.onclick = function() {
-    var sectionArray = [];
-    editor.querySelectorAll(".auto-fill").forEach((el) =>
+
+    if(editor.innerHTML.length > 1)
     {
-        var section = [];
-        var elComStyle = window.getComputedStyle(el);
-        let numberOfElement = elComStyle.getPropertyValue("grid-template-columns").split(" ").length;
-        el.querySelectorAll(".element").forEach((child) =>
-        {
-            var classN = child.className;
-            switch(classN){
-                case "element":
-                    section.push(0);
-                    break;
-                case "element empty":
-                    section.push(-1);
-                    break;
-                case "element premium":
-                    section.push(1);
-                    break;
-                case "element premium-plus":
-                    section.push(2);
-                    break;
-            }
-        })
-        var newSection = new Section(section, numberOfElement);
-        sectionArray.push(newSection);
-
-    })
-    var template = new Template("Template", sectionArray);
-    console.log(template);
-
-    localStorage.template = JSON.stringify(template);
-    localStorage.backup = "";
-
-    editor.innerHTML = "";
-    constructor.classList.remove("active");
-
-    ShowTemplate(template, "template");
+        ConstructorForm.classList.add("active");
+    } else {
+        alert("At first add elements");
+    }
 }
 
 // useless function
@@ -245,19 +222,19 @@ function ShowTemplate(obj, id) {
         s.section.forEach((el) =>{
             switch(el){
                 case 0:
-                    AppendELement(autoFill);
+                    AppendELement(autoFill, 0);
                     break;
                 case -1:
-                    AppendELementWithCLassName(autoFill, "empty");
+                    AppendELementWithCLassName(autoFill, "empty", 0);
                     break;
                 case 1:
-                    AppendELementWithCLassName(autoFill, "premium");
+                    AppendELementWithCLassName(autoFill, "premium", 0);
                     break;
                 case 2:
-                    AppendELementWithCLassName(autoFill, "premium-plus");
+                    AppendELementWithCLassName(autoFill, "premium-plus", 0);
                     break;
                 case 10:
-                    AppendELementWithCLassName(autoFill, "reserved");
+                    AppendELementWithCLassName(autoFill, "reserved", 0);
                     break;
             }
         });
@@ -265,6 +242,62 @@ function ShowTemplate(obj, id) {
         autoFill.setAttribute("style", "grid-template-columns: repeat(" + s.columnN + ", auto)");
         area.appendChild(autoFill);
     });
+}
+
+var ConstructorCansel = document.querySelector("#constructor-cansel");
+var ConstructorFComfirm = document.querySelector("#constructor-comfirm");
+var ConstructorForm = document.querySelector("#constructor-form");
+
+ConstructorForm.onclick = function () {
+    return false;
+}
+
+ConstructorCansel.onclick = function () {
+    ConstructorForm.classList.remove("active");
+}
+
+ConstructorFComfirm.onclick = function () {
+    var sectionArray = [];
+    editor.querySelectorAll(".auto-fill").forEach((el) =>
+    {
+        var section = [];
+        var elComStyle = window.getComputedStyle(el);
+        let numberOfElement = elComStyle.getPropertyValue("grid-template-columns").split(" ").length;
+        el.querySelectorAll(".element").forEach((child) =>
+        {
+            var classN = child.className;
+            switch(classN){
+                case "element":
+                    section.push(0);
+                    break;
+                case "element empty":
+                    section.push(-1);
+                    break;
+                case "element premium":
+                    section.push(1);
+                    break;
+                case "element premium-plus":
+                    section.push(2);
+                    break;
+            }
+        })
+        var newSection = new Section(section, numberOfElement);
+        sectionArray.push(newSection);
+
+    })
+    var template = new Template("Template", sectionArray);
+    console.log(template);
+
+    localStorage.template = JSON.stringify(template);
+    localStorage.backup = "";
+    localStorage.page = 0;
+
+    constructor.classList.remove("active");
+    ConstructorForm.classList.remove("active");
+
+    ShowTemplate(template, "template");
+
+    editor.innerHTML = "";
 }
 
 if(localStorage.template) {
@@ -285,3 +318,4 @@ if(localStorage.page) {
             break;
     }
 }
+
