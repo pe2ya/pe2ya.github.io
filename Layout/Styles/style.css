@@ -4,6 +4,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* Remove default margin */
@@ -81,17 +82,24 @@ select {
     --btn-active: #4d13d1;
     --btn-active-text: #ffffff;
     --nav-size: 6em;
-    --nav-text-color: black;
-    --nav-text-color-hover: grey;
+    --nav-text-color: #000000;
+    --nav-text-color-hover: #606060;
     --scroll-bar-color: #888;
     --scroll-bar-color-hover: #555;
     --form-cansel-color: #afafaf;
     --form-cansel-color-hover: #5f5f5f;
     --form-comfirm-color: #187ff5;
+    --text-color: #000000;
+    --element-default-color: black;
+    --element-premium-color: lightcoral;
+    --element-premium-plus-color: lightskyblue;
+    --footer-color: #ffffff;
+    --footer-text-color: #6d6d6d;
+    --footer-icon-color:#d3d3d3;
 }
 
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 main
 {
@@ -150,6 +158,11 @@ main .default .buttons {
     .page.default .btn-container ion-icon
     {
         transform: scale(4) ;
+    }
+
+     body{
+        overflow-x: hidden;
+        position:fixed;
     }
   }
 
@@ -213,16 +226,10 @@ main :is(.constructor.active, .preview.active) {
 h1, label, a, li, button, input
 {
     font-weight: 300;
-    font-family: 'Roboto', sans-serif;
     margin: 0 auto;
     width: fit-content;
     overflow-wrap: break-word;
     text-align: center;
-}
-
-.preview .content h1
-{
-    margin-bottom: 2em;
 }
 
 .constructor .menu
@@ -343,8 +350,13 @@ h1, label, a, li, button, input
     gap: 2em;
 }
 
-.auto-fill{
+.editor #el-container .auto-fill
+{
     margin: 0 auto;
+}
+
+.auto-fill{
+    margin: 0;
     width: fit-content;
     display: grid;
     gap: .3em;
@@ -355,13 +367,15 @@ h1, label, a, li, button, input
     width: 1.4em;
     aspect-ratio: 1;
     border-radius: 2px;
-    background-color: black;
+    background-color: var(--element-default-color);
     cursor: pointer;
+    text-align: center;
 }
 
 .element.empty
 {
-    background-color: transparent;
+    background-color: transparent !important;
+    color: var(--text-color) !important;
     cursor: auto;
 }
 
@@ -373,29 +387,22 @@ h1, label, a, li, button, input
 
 .element.premium
 {
-    background-color: lightcoral;
+    background-color: var(--element-premium-color);
 }
 
 .element.premium-plus
 {
-    background-color: lightskyblue;
+    background-color: var(--element-premium-plus-color);
 }
 
 .section .btn-container.edit ion-icon
 {
     transform: rotate(0deg) scale(1.5);
-    
 }
 
 .page.preview .content
 {
     flex-flow: column;
-}
-
-#template{
-    flex-flow: column;
-    gap: 2em;
-    overflow: auto;
 }
 
 nav {
@@ -526,6 +533,11 @@ width: 100%;
     background: var(--scroll-bar-color-hover); 
 }
 
+body::-webkit-scrollbar {
+    width: 0px !important;
+    height: 0px !important;
+}
+
 .form-window {
     display: none; 
     position: fixed; 
@@ -624,3 +636,184 @@ width: 100%;
 .form-window label {
     font-size: 1.25em;
 }
+
+.template-container
+{
+    display: flex;
+    flex-flow: column;
+    gap: 1.5em;
+}
+
+.template-container h1
+{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.template-container .template-info
+{
+    display: flex;
+    flex-flow: column;
+    gap: 1.7em;
+    overflow: auto;
+}
+
+.template-container .template-info .template-seats
+{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    gap: 1.5em;
+}
+
+.template-seats .element::before
+{
+    content: attr(data-hover);
+    opacity: 0;
+}
+
+.template-seats .element:hover
+{
+    background: var(--btn-active);
+    color: #ffffff;
+}
+
+.template-seats .element:hover:before
+{
+    animation: showText .2s forwards;
+}
+
+.template-container .price-group
+{
+    display: flex;
+    gap: 3em;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.template-container .price
+{
+    display: flex;
+    gap: 1em;
+}
+
+@keyframes showText {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+.footer-basic {
+    margin-top: 0.1em;
+    padding: 1.5em 0;
+    background-color: var(--footer-color);
+    color: var(--footer-text-color);
+    box-shadow: 
+        inset 0 -8px 4px 4px var(--footer-color),
+        inset 0 0 4px 0px var(--footer-text-color);
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.125em;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 .625em;
+    margin: 0;
+}
+
+.footer-basic ul a {
+    display:  inline-block;
+    
+    transition: all .3s ease 0s;
+    color: var(--footer-text-color);
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .social {
+    text-align: center;
+}
+
+.footer-basic .social a {
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid var(--footer-icon-color);
+    margin: 0 .1em;
+    color: inherit;
+}
+
+.footer-basic .social a:hover {
+    border-radius: 8px;
+    transform: scale(1.15);
+}
+
+.footer-basic .copyright {
+    margin-top: 1em;
+    text-align: center;
+    font-size: .875em;
+    margin-bottom: 0;
+}
+.social a i 
+{
+    transition: .375s;
+}
+.social a:hover i[class*="instagram"]
+{
+    color: coral
+}
+
+.social a:hover i[class*="snapchat"]
+{
+    color: #fbd35d;
+}
+
+.social a:hover i[class*="twitter"]
+{
+    color: #2196f3;
+}
+
+.social a:hover i[class*="facebook"]
+{
+    color: #253cbe
+}
+
+/*
+.social i[class*="instagram"]
+{
+    color: coral
+}
+
+.social i[class*="snapchat"]
+{
+    color: #fbd35d;
+}
+
+.social i[class*="twitter"]
+{
+    color: #2196f3;
+}
+
+.social i[class*="facebook"]
+{
+    color: #253cbe
+}
+*/
